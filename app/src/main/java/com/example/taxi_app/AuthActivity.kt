@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.taxi_app.databinding.ActivityAuthBinding
 import com.example.taxi_app.databinding.ActivityMainBinding
+import com.example.taxi_app.fragments.AuthFragement
+import com.example.taxi_app.utilites.replaceFragment
 
 class AuthActivity : AppCompatActivity() {
 
@@ -15,5 +17,10 @@ class AuthActivity : AppCompatActivity() {
 
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        replaceFragment(AuthFragement())
     }
 }
