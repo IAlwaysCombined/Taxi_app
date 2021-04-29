@@ -24,11 +24,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="На него мы отправим код \n подтверждения"
-        app:layout_constraintTop_toBottomOf="@id/Number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/black"
         android:textStyle="bold"
-        android:textColor="@color/black"/>
+        app:layout_constraintEnd_toEndOf="@+id/Number"
+        app:layout_constraintStart_toStartOf="@+id/Number"
+        app:layout_constraintTop_toBottomOf="@id/Number" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,8 +36,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:inputType="phone"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="+380 ()"
         />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
