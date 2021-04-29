@@ -1,13 +1,12 @@
 package com.example.taxi_app
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.example.taxi_app.activity.AuthActivity
 import com.example.taxi_app.databinding.ActivityMainBinding
-import com.example.taxi_app.fragments.MapsFragment
 import com.example.taxi_app.fragments.objects.AppDrawer
-import com.example.taxi_app.utilites.APP_ACTIVITY
-import com.example.taxi_app.utilites.replaceFragment
+import com.example.taxi_app.utilites.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,14 +19,32 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         APP_ACTIVITY = this
-        initFields()
+        //replaceFragment(MapsFragment())
     }
 
+    //Start fun MainActivity
+    override fun onStart() {
+        super.onStart()
+        initFields()
+        initFunc()
+    }
+
+    //init Fields
     private fun initFields(){
-        //replaceFragment(MapsFragment())
-        toolbar = binding.mainToolbarUsers
+        toolbar = binding.mainToolbar
         appDrawer = AppDrawer(this, toolbar)
         setSupportActionBar(toolbar)
         appDrawer.create()
+        initFirebase()
+    }
+
+    //init Func
+    private fun initFunc() {
+        if (AUTH.currentUser != null) {
+            replaceActivity(MainActivity())
+        }
+        else{
+            replaceActivity(AuthActivity())
+        }
     }
 }

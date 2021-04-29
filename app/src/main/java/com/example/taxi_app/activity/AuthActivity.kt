@@ -1,9 +1,9 @@
-package com.example.taxi_app
+package com.example.taxi_app.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.taxi_app.R
 import com.example.taxi_app.databinding.ActivityAuthBinding
-import com.example.taxi_app.databinding.ActivityMainBinding
 import com.example.taxi_app.fragments.AuthFragement
 import com.example.taxi_app.utilites.replaceFragment
 
