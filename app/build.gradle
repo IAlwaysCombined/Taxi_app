@@ -60,4 +60,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:19.7.0'
     implementation 'com.google.firebase:firebase-storage:19.2.2'
 
+    //Drawer
+    implementation "com.mikepenz:materialdrawer-nav:7.0.0"
+    implementation "com.mikepenz:materialdrawer:7.0.0"
+
 }
