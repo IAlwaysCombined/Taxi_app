@@ -1,4 +1,4 @@
-package com.example.taxi_app.fragments.screens
+package com.example.taxi_app.ui.screens
 
 import android.os.Bundle
 import android.view.View
@@ -29,8 +29,8 @@ class EnterCodeFragment(private val phoneNumber: String, val id: String) : Fragm
         })
     }
 
+    //Enter code
     private fun enterCode() {
-        /* Функция проверяет код, если все нормально, производит создания информации о пользователе в базе данных.*/
         val code = binding.registerInputCode.text.toString()
         val credential = PhoneAuthProvider.getCredential(id, code)
         AUTH.signInWithCredential(credential).addOnCompleteListener { task ->
@@ -39,7 +39,7 @@ class EnterCodeFragment(private val phoneNumber: String, val id: String) : Fragm
                 val dateMap = mutableMapOf<String, Any>()
                 dateMap[CHILD_ID] = uid
                 dateMap[CHILD_PHONE] = phoneNumber
-
+                dateMap[CHILD_ROLE] = USER_ROLE
 
                 REF_DATABASE_ROOT.child(NODE_USERS).child(uid)
                     .addListenerForSingleValueEvent(AppValueEventListener{
