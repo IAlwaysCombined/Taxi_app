@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.taxi_app.R
 import com.example.taxi_app.databinding.ActivityAuthBinding
-import com.example.taxi_app.fragments.AuthFragement
+import com.example.taxi_app.fragments.screens.EnterPhoneNumberFragment
 import com.example.taxi_app.utilites.replaceFragment
 
 class AuthActivity : AppCompatActivity() {
@@ -21,6 +21,6 @@ class AuthActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        replaceFragment(AuthFragement())
+        replaceFragment(EnterPhoneNumberFragment())
     }
 }

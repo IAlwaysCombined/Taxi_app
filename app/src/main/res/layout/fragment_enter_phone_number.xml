@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.AuthFragement">
+    tools:context=".fragments.screens.EnterPhoneNumberFragment">
 
     <TextView
-        android:id="@+id/Number"
+        android:id="@+id/register_text_view_phone_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Введите номер"
@@ -20,26 +20,35 @@
         android:textColor="@color/black"/>
 
     <TextView
-        android:id="@+id/info"
+        android:id="@+id/register_text_view_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="На него мы отправим код \n подтверждения"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/Number"
-        app:layout_constraintStart_toStartOf="@+id/Number"
-        app:layout_constraintTop_toBottomOf="@id/Number" />
+        app:layout_constraintEnd_toEndOf="@+id/register_text_view_phone_number"
+        app:layout_constraintStart_toStartOf="@+id/register_text_view_phone_number"
+        app:layout_constraintTop_toBottomOf="@id/register_text_view_phone_number" />
+
     <EditText
+        android:id="@+id/register_edt_text_enter_phone_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/info"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:inputType="phone"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:hint="+380 ()"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/register_text_view_info" />
+
+    <Button
+        android:id="@+id/register_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Войти"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_edt_text_enter_phone_number" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

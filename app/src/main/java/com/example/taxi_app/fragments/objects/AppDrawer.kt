@@ -5,7 +5,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.taxi_app.MainActivity
 import com.example.taxi_app.R
-import com.example.taxi_app.fragments.MapsFragment
+import com.example.taxi_app.fragments.screens.MapsFragment
+import com.example.taxi_app.fragments.screens.ProfileFragment
 import com.example.taxi_app.utilites.replaceFragment
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.DrawerBuilder
@@ -22,6 +23,25 @@ class AppDrawer(var mainActivity: MainActivity,var toolbar: Toolbar) {
         drawerLayout = drawer.drawerLayout
     }
 
+    fun disableDrawer() {
+        drawer.actionBarDrawerToggle?.isDrawerIndicatorEnabled = false
+        mainActivity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+        toolbar.setNavigationOnClickListener {
+            mainActivity.supportFragmentManager.popBackStack()
+        }
+    }
+
+    fun enableDrawer() {
+        mainActivity.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        drawer.actionBarDrawerToggle?.isDrawerIndicatorEnabled = true
+        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
+        toolbar.setNavigationOnClickListener {
+            drawer.openDrawer()
+        }
+    }
+
+
     private fun createDrawer() {
         drawer = DrawerBuilder()
             .withActivity(mainActivity)
@@ -32,27 +52,17 @@ class AppDrawer(var mainActivity: MainActivity,var toolbar: Toolbar) {
             .addDrawerItems(
                 PrimaryDrawerItem().withIdentifier(100)
                     .withIconTintingEnabled(true)
-                    .withName("Информация об аккаунте")
+                    .withName("Профиль")
                     .withSelectable(false)
                     .withIcon(R.drawable.ic_android_black_24dp),
                 PrimaryDrawerItem().withIdentifier(101)
                     .withIconTintingEnabled(true)
-                    .withName("Предложенные новости")
+                    .withName("Способ оплаты")
                     .withSelectable(false)
                     .withIcon(R.drawable.ic_android_black_24dp),
                 PrimaryDrawerItem().withIdentifier(102)
                     .withIconTintingEnabled(true)
-                    .withName("Список ошибок")
-                    .withSelectable(false)
-                    .withIcon(R.drawable.ic_android_black_24dp),
-                PrimaryDrawerItem().withIdentifier(103)
-                    .withIconTintingEnabled(true)
-                    .withName("Список пользователей")
-                    .withSelectable(false)
-                    .withIcon(R.drawable.ic_android_black_24dp),
-                PrimaryDrawerItem().withIdentifier(104)
-                    .withIconTintingEnabled(true)
-                    .withName("Выйти из аккаунта")
+                    .withName("Помощь")
                     .withSelectable(false)
                     .withIcon(R.drawable.ic_android_black_24dp),
             ).withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener {
@@ -62,7 +72,7 @@ class AppDrawer(var mainActivity: MainActivity,var toolbar: Toolbar) {
                     drawerItem: IDrawerItem<*>
                 ): Boolean {
                     when (position) {
-                        0 -> mainActivity.replaceFragment(MapsFragment())
+                        0 -> mainActivity.replaceFragment(ProfileFragment())
                     }
                     return false
                 }

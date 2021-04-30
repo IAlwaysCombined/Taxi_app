@@ -5,6 +5,7 @@ import android.content.Intent
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.taxi_app.MainActivity
 import com.example.taxi_app.R
 
 fun showToast(message: String) {
@@ -34,4 +35,11 @@ fun Fragment.replaceFragment(fragment: Fragment) {
         ?.addToBackStack(null)
         ?.replace(R.id.main_container, fragment)
         ?.commit()
+}
+
+fun restartActivity() {
+    /* Функция расширения для AppCompatActivity, позволяет запускать активити */
+    val intent = Intent(APP_ACTIVITY, MainActivity::class.java)
+    APP_ACTIVITY.startActivity(intent)
+    APP_ACTIVITY.finish()
 }
