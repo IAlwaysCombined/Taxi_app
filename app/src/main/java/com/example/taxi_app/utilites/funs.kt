@@ -37,8 +37,8 @@ fun Fragment.replaceFragment(fragment: Fragment) {
         ?.commit()
 }
 
+//AppCompat activity help method
 fun restartActivity() {
-    /* Функция расширения для AppCompatActivity, позволяет запускать активити */
     val intent = Intent(APP_ACTIVITY, MainActivity::class.java)
     APP_ACTIVITY.startActivity(intent)
     APP_ACTIVITY.finish()

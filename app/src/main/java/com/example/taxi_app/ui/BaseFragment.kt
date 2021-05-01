@@ -1,8 +1,9 @@
-package com.example.taxi_app.fragments
+package com.example.taxi_app.ui
 
 import androidx.fragment.app.Fragment
 import com.example.taxi_app.MainActivity
 
+//Base fragment
 open class BaseFragment(layout: Int) : Fragment(layout) {
 
     override fun onStart() {
