@@ -38,6 +38,7 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
         super.onStart()
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(APP_ACTIVITY)
         fetchLocation()
+        APP_ACTIVITY.title = ""
     }
 
     //Fetch user location
@@ -69,7 +70,7 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
         val latLng = LatLng(currentLocation.latitude, currentLocation.longitude)
         val markerOptions = MarkerOptions().position(latLng).title("Я тут!")
         googleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng))
-        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 100f))
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f))
         googleMap.addMarker(markerOptions)
     }
 

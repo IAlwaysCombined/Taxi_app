@@ -87,6 +87,10 @@ class AppDrawer(var mainActivity: MainActivity,var toolbar: Toolbar) {
                     .withIconTintingEnabled(true)
                     .withName("Служба поддержки")
                     .withSelectable(false),
+                PrimaryDrawerItem().withIdentifier(103)
+                    .withIconTintingEnabled(true)
+                    .withName("Стать водителем")
+                    .withSelectable(false),
             ).withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener {
                 override fun onItemClick(
                     view: View?,
@@ -97,6 +101,7 @@ class AppDrawer(var mainActivity: MainActivity,var toolbar: Toolbar) {
                         1 -> mainActivity.replaceFragment(ProfileFragment())
                         2 -> mainActivity.replaceFragment(PayMethodFragment())
                         3 -> mainActivity.replaceFragment(HelpFragment())
+                        4 -> showToast("Стать водителем")
                     }
                     return false
                 }
