@@ -55,8 +55,8 @@ class AppDrawer(var mainActivity: MainActivity,var toolbar: Toolbar) {
     //Create header
     private fun createHeader() {
         currentProfile = ProfileDrawerItem()
+            .withIcon(R.mipmap.ic_launcher)
             .withEmail(PHONE)
-            .withIdentifier(200)
         header = AccountHeaderBuilder()
             .withActivity(APP_ACTIVITY)
             .withHeaderBackground(R.drawable.header)
@@ -85,7 +85,7 @@ class AppDrawer(var mainActivity: MainActivity,var toolbar: Toolbar) {
                     .withSelectable(false),
                 PrimaryDrawerItem().withIdentifier(102)
                     .withIconTintingEnabled(true)
-                    .withName("Помощь")
+                    .withName("Служба поддержки")
                     .withSelectable(false),
             ).withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener {
                 override fun onItemClick(

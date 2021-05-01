@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:gravity="center"
+        android:textSize="40sp"
         android:text="Код"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"

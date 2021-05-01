@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.taxi_app.activity.AuthActivity
 import com.example.taxi_app.databinding.ActivityMainBinding
+import com.example.taxi_app.fragments.screens.MapsFragment
 import com.example.taxi_app.models.User
-import com.example.taxi_app.ui.screens.MapsFragment
 import com.example.taxi_app.ui.objects.AppDrawer
 import com.example.taxi_app.utilites.*
 
@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity() {
 
     //init Func
     private fun initFunc() {
-        println("---------------->" + USER.username)
         if (AUTH.currentUser != null) {
             replaceFragment(MapsFragment())
         }

@@ -30,13 +30,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name_user" />
 
-    <Button
+    <TextView
         android:id="@+id/profile_exit_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/profile_exit_btn_text"
+        android:padding="20sp"
+        android:text="Выйти"
+        android:textAlignment="center"
+        android:textColor="@color/md_red_600"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
