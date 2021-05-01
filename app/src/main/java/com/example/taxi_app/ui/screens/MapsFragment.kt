@@ -69,7 +69,7 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
         val latLng = LatLng(currentLocation.latitude, currentLocation.longitude)
         val markerOptions = MarkerOptions().position(latLng).title("Я тут!")
         googleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng))
-        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 5f))
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 100f))
         googleMap.addMarker(markerOptions)
     }
 
