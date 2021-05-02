@@ -17,6 +17,7 @@ import com.example.taxi_app.utilites.APP_ACTIVITY
 import com.google.android.gms.common.api.Status
 import com.google.android.gms.common.internal.service.Common
 import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -42,6 +43,8 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
     private lateinit var currentLocation: Location
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     private val permissionCode = 101
+
+    lateinit var locationCallback: LocationCallback
     val cityname = ""
 
     private lateinit var  slidingPaneLayout: SlidingPaneLayout
@@ -54,6 +57,7 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
         val root = layoutInflater.inflate(R.layout.fragment_maps, main_container)
         initView(root)
         init()
+
     }
 
     override fun onStart() {
@@ -68,9 +72,7 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
 
 
     }
-    override fun onLocationResult(p0: LocationResult){
-        setRestrictPlaceInCountry(p0!!.lastLocation)
-    }
+
 
     private fun setRestrictPlaceInCountry(lastLocation: Location) {
         try {
@@ -103,6 +105,12 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
 
         })
 
+        locationCallback = object : LocationCallback(){
+            override fun onLocationResult(p0: LocationResult) {
+                super.onLocationResult(p0)
+                setRestrictPlaceInCountry(p0!!.lastLocation)
+            }
+        }
     }
 
 
