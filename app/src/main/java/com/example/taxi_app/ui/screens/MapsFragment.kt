@@ -48,7 +48,6 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
     val cityname = ""
 
     private lateinit var  slidingPaneLayout: SlidingPaneLayout
-    private lateinit var  text : TextView
     private lateinit var autocompleteSupportFragment: AutocompleteSupportFragment
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -68,8 +67,6 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
 
     private fun initView(root: View?){
         slidingPaneLayout = root?.findViewById(R.id.mapFragment) as SlidingPaneLayout
-        text = root!!.findViewById(R.id.text_test) as TextView
-
 
     }
 
