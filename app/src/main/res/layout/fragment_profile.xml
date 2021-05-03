@@ -7,14 +7,6 @@
     tools:context=".ui.screens.ProfileFragment">
 
     <TextView
-        android:id="@+id/profile_text_view_description_profile"
-        style="@style/text_view_upper_text"
-        android:text="@string/profile_text_view_description_profile_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/profile_name_user_text_view_description_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,7 +16,7 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_text_view_description_profile" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/profile_name_user_text_view_name"

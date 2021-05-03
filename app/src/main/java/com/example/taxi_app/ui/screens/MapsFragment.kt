@@ -70,6 +70,7 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
         super.onStart()
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(APP_ACTIVITY)
         fetchLocation()
+        APP_ACTIVITY.title = "Карта"
     }
 
     private fun initView(root: View?){
@@ -118,7 +119,6 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
         }
     }
 
-
     //Fetch user location
     private fun fetchLocation(){
         if (ActivityCompat.checkSelfPermission(
@@ -135,8 +135,6 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
         task.addOnSuccessListener { location ->
             if(location != null){
                 currentLocation = location
-                Toast.makeText(applicationContext, currentLocation.latitude.toString() + "" +
-                        currentLocation.longitude, Toast.LENGTH_LONG).show()
                 val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
                 mapFragment?.getMapAsync(this)
             }

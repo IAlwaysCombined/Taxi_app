@@ -21,6 +21,6 @@ class HelpFragment : BaseFragment(R.layout.fragment_help) {
 
     override fun onStart() {
         super.onStart()
-        APP_ACTIVITY.title = ""
+        APP_ACTIVITY.title = "Поддержка"
     }
 }
