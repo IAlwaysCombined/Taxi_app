@@ -8,7 +8,10 @@ import com.example.taxi_app.R
 import com.example.taxi_app.ui.screens.HelpFragment
 import com.example.taxi_app.ui.screens.PayMethodFragment
 import com.example.taxi_app.ui.screens.ProfileFragment
-import com.example.taxi_app.utilites.*
+import com.example.taxi_app.utilites.APP_ACTIVITY
+import com.example.taxi_app.utilites.PHONE
+import com.example.taxi_app.utilites.initFirebase
+import com.example.taxi_app.utilites.replaceFragment
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
 import com.mikepenz.materialdrawer.Drawer
@@ -101,7 +104,6 @@ class AppDrawer(var mainActivity: MainActivity,var toolbar: Toolbar) {
                         1 -> mainActivity.replaceFragment(ProfileFragment())
                         2 -> mainActivity.replaceFragment(PayMethodFragment())
                         3 -> mainActivity.replaceFragment(HelpFragment())
-                        4 -> showToast("Стать водителем")
                     }
                     return false
                 }

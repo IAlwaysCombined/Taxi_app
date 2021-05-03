@@ -1,4 +1,4 @@
-package com.example.taxi_app.fragments.screens
+package com.example.taxi_app.ui.screens
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
@@ -17,7 +16,6 @@ import com.example.taxi_app.R
 import com.example.taxi_app.databinding.FragmentMapsBinding
 import com.example.taxi_app.utilites.APP_ACTIVITY
 import com.google.android.gms.common.api.Status
-import com.google.android.gms.common.internal.service.Common
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationResult
@@ -34,8 +32,6 @@ import com.google.android.libraries.places.widget.AutocompleteSupportFragment
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener
 import com.google.android.material.snackbar.Snackbar
 import com.mikepenz.iconics.Iconics.applicationContext
-import kotlinx.android.synthetic.main.activity_auth.*
-import kotlinx.android.synthetic.main.fragment_maps.*
 import java.io.IOException
 import java.util.*
 
@@ -81,11 +77,10 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
 
     }
 
-
     private fun setRestrictPlaceInCountry(lastLocation: Location) {
         try {
             val geoCoder = Geocoder(requireContext(), Locale.getDefault())
-            var addressList = geoCoder.getFromLocation(currentLocation.latitude, currentLocation.longitude, 1)
+            val addressList = geoCoder.getFromLocation(currentLocation.latitude, currentLocation.longitude, 1)
             if (addressList.size > 0 ) {
                 autocompleteSupportFragment.setCountry(addressList[0].countryCode)
             }
@@ -98,10 +93,12 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
     private fun init(){
         Places.initialize(requireContext(),getString(R.string.google_maps_key))
         autocompleteSupportFragment = childFragmentManager.findFragmentById(R.id.autocomplete_fragment) as AutocompleteSupportFragment
-        autocompleteSupportFragment.setPlaceFields(Arrays.asList(Place.Field.ID,
+        autocompleteSupportFragment.setPlaceFields(
+            listOf(Place.Field.ID,
         Place.Field.ADDRESS,
         Place.Field.LAT_LNG,
-        Place.Field.NAME))
+        Place.Field.NAME)
+        )
         autocompleteSupportFragment.setOnPlaceSelectedListener(object : PlaceSelectionListener {
             override fun onPlaceSelected(p0: Place) {
                 Snackbar.make(requireView(),""+ p0.latLng,Snackbar.LENGTH_SHORT).show()
@@ -116,7 +113,7 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
         locationCallback = object : LocationCallback(){
             override fun onLocationResult(p0: LocationResult) {
                 super.onLocationResult(p0)
-                setRestrictPlaceInCountry(p0!!.lastLocation)
+                setRestrictPlaceInCountry(p0.lastLocation)
             }
         }
     }
@@ -149,10 +146,26 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
     //Add tracking
     override fun onMapReady(googleMap: GoogleMap) {
         val latLng = LatLng(currentLocation.latitude, currentLocation.longitude)
-        val markerOptions = MarkerOptions().position(latLng).title("Я тут!")
+        if (ActivityCompat.checkSelfPermission(
+                APP_ACTIVITY,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                APP_ACTIVITY,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return
+        }
+        googleMap.isMyLocationEnabled = true
         googleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng))
-        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 100f))
-        googleMap.addMarker(markerOptions)
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f))
     }
 
     //Permission

@@ -5,7 +5,6 @@ import android.view.View
 import com.example.taxi_app.R
 import com.example.taxi_app.activity.AuthActivity
 import com.example.taxi_app.databinding.FragmentProfileBinding
-import com.example.taxi_app.fragments.screens.MapsFragment
 import com.example.taxi_app.ui.BaseFragment
 import com.example.taxi_app.utilites.*
 
