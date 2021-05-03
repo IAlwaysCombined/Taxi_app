@@ -104,9 +104,11 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
         Place.Field.NAME))
         autocompleteSupportFragment.setOnPlaceSelectedListener(object : PlaceSelectionListener {
             override fun onPlaceSelected(p0: Place) {
+                Snackbar.make(requireView(),""+ p0.latLng,Snackbar.LENGTH_SHORT).show()
 
             }
             override fun onError(p0: Status) {
+                Snackbar.make(requireView(), p0.statusMessage,Snackbar.LENGTH_SHORT).show()
             }
 
         })
