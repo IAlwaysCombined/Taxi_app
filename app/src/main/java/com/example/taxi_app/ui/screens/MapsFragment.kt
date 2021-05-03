@@ -5,7 +5,9 @@ import android.content.pm.PackageManager
 import android.location.Geocoder
 import android.location.Location
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -33,10 +35,11 @@ import com.google.android.libraries.places.widget.listener.PlaceSelectionListene
 import com.google.android.material.snackbar.Snackbar
 import com.mikepenz.iconics.Iconics.applicationContext
 import kotlinx.android.synthetic.main.activity_auth.*
+import kotlinx.android.synthetic.main.fragment_maps.*
 import java.io.IOException
 import java.util.*
 
-@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
+@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS", "UNREACHABLE_CODE")
 class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
 
     private lateinit var binding: FragmentMapsBinding
@@ -53,10 +56,18 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentMapsBinding.bind(view)
-        val root = layoutInflater.inflate(R.layout.fragment_maps, main_container)
+        init()
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return super.onCreateView(inflater, container, savedInstanceState)
+        val root = layoutInflater.inflate(R.layout.fragment_maps, container, false )
         initView(root)
         init()
-
     }
 
     override fun onStart() {
@@ -93,11 +104,9 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
         Place.Field.NAME))
         autocompleteSupportFragment.setOnPlaceSelectedListener(object : PlaceSelectionListener {
             override fun onPlaceSelected(p0: Place) {
-                Snackbar.make(requireView(),""+ p0.latLng,Snackbar.LENGTH_SHORT).show()
 
             }
             override fun onError(p0: Status) {
-                Snackbar.make(requireView(), p0.statusMessage,Snackbar.LENGTH_SHORT).show()
             }
 
         })

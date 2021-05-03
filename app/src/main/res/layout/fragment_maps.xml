@@ -6,9 +6,10 @@
     android:layout_height="wrap_content"
     android:id="@+id/mapFragment"
     android:layout_width="match_parent"
-    android:layout_gravity="bottom"
+    android:gravity="bottom"
     app:umanoPanelHeight="220dp"
     app:umanoShadowHeight="200dp"
+
     >
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
