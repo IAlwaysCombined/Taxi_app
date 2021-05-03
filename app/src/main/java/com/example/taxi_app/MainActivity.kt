@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
     //init Fields
     private fun initFields(){
         toolbar = binding.mainToolbar
-        appDrawer = AppDrawer(this, toolbar)
+        appDrawer = AppDrawer()
         setSupportActionBar(toolbar)
         appDrawer.create()
         initUser()

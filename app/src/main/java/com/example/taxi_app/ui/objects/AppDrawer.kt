@@ -1,9 +1,7 @@
 package com.example.taxi_app.ui.objects
 
 import android.view.View
-import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
-import com.example.taxi_app.MainActivity
 import com.example.taxi_app.R
 import com.example.taxi_app.ui.screens.HelpFragment
 import com.example.taxi_app.ui.screens.PayMethodFragment
@@ -19,8 +17,9 @@ import com.mikepenz.materialdrawer.DrawerBuilder
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
+import kotlinx.android.synthetic.main.activity_main.*
 
-class AppDrawer(var mainActivity: MainActivity,var toolbar: Toolbar) {
+class AppDrawer() {
 
     private lateinit var drawer: Drawer
     private lateinit var drawerLayout: DrawerLayout
@@ -38,19 +37,19 @@ class AppDrawer(var mainActivity: MainActivity,var toolbar: Toolbar) {
     //Disable drawer
     fun disableDrawer() {
         drawer.actionBarDrawerToggle?.isDrawerIndicatorEnabled = false
-        mainActivity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        APP_ACTIVITY.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
-        toolbar.setNavigationOnClickListener {
-            mainActivity.supportFragmentManager.popBackStack()
+        APP_ACTIVITY.main_toolbar.setNavigationOnClickListener {
+            APP_ACTIVITY.supportFragmentManager.popBackStack()
         }
     }
 
     //Enable drawer
     fun enableDrawer() {
-        mainActivity.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        APP_ACTIVITY.supportActionBar?.setDisplayHomeAsUpEnabled(false)
         drawer.actionBarDrawerToggle?.isDrawerIndicatorEnabled = true
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
-        toolbar.setNavigationOnClickListener {
+        APP_ACTIVITY.main_toolbar.setNavigationOnClickListener {
             drawer.openDrawer()
         }
     }
@@ -71,10 +70,10 @@ class AppDrawer(var mainActivity: MainActivity,var toolbar: Toolbar) {
     //Create drawer
     private fun createDrawer() {
         drawer = DrawerBuilder()
-            .withActivity(mainActivity)
+            .withActivity(APP_ACTIVITY)
             .withAccountHeader(header)
             .withSliderBackgroundColorRes(R.color.white)
-            .withToolbar(toolbar)
+            .withToolbar(APP_ACTIVITY.main_toolbar)
             .withActionBarDrawerToggle(true)
             .withSelectedItem(-1)
             .addDrawerItems(
@@ -101,9 +100,9 @@ class AppDrawer(var mainActivity: MainActivity,var toolbar: Toolbar) {
                     drawerItem: IDrawerItem<*>
                 ): Boolean {
                     when (position) {
-                        1 -> mainActivity.replaceFragment(ProfileFragment())
-                        2 -> mainActivity.replaceFragment(PayMethodFragment())
-                        3 -> mainActivity.replaceFragment(HelpFragment())
+                        1 -> APP_ACTIVITY.replaceFragment(ProfileFragment())
+                        2 -> APP_ACTIVITY.replaceFragment(PayMethodFragment())
+                        3 -> APP_ACTIVITY.replaceFragment(HelpFragment())
                     }
                     return false
                 }
