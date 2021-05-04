@@ -17,7 +17,6 @@ import com.mikepenz.materialdrawer.DrawerBuilder
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
-import kotlinx.android.synthetic.main.activity_main.*
 
 class AppDrawer() {
 
@@ -39,7 +38,7 @@ class AppDrawer() {
         drawer.actionBarDrawerToggle?.isDrawerIndicatorEnabled = false
         APP_ACTIVITY.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
-        APP_ACTIVITY.main_toolbar.setNavigationOnClickListener {
+        APP_ACTIVITY.toolbar.setNavigationOnClickListener {
             APP_ACTIVITY.supportFragmentManager.popBackStack()
         }
     }
@@ -49,7 +48,7 @@ class AppDrawer() {
         APP_ACTIVITY.supportActionBar?.setDisplayHomeAsUpEnabled(false)
         drawer.actionBarDrawerToggle?.isDrawerIndicatorEnabled = true
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
-        APP_ACTIVITY.main_toolbar.setNavigationOnClickListener {
+        APP_ACTIVITY.toolbar.setNavigationOnClickListener {
             drawer.openDrawer()
         }
     }
@@ -73,7 +72,7 @@ class AppDrawer() {
             .withActivity(APP_ACTIVITY)
             .withAccountHeader(header)
             .withSliderBackgroundColorRes(R.color.white)
-            .withToolbar(APP_ACTIVITY.main_toolbar)
+            .withToolbar(APP_ACTIVITY.toolbar)
             .withActionBarDrawerToggle(true)
             .withSelectedItem(-1)
             .addDrawerItems(

@@ -16,7 +16,6 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentProfileBinding.bind(view)
-        APP_ACTIVITY.title = "Профиль"
     }
 
     override fun onStart() {
@@ -24,11 +23,16 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
         initFields()
     }
 
+    override fun onResume() {
+        super.onResume()
+        initFields()
+    }
+
     //Init fields
     private fun initFields(){
         binding.profileExitBtn.setOnClickListener { exitApp() }
         binding.profilePhoneUserTextViewPhone.text = PHONE
-        binding.profileNameUserTextViewName.text = USER.username
+        binding.profileNameUserTextViewName.text = USER.name_user
         binding.profilePhoneUserTextViewPhone.setOnClickListener {  }
         binding.profileNameUserTextViewName.setOnClickListener {  }
     }

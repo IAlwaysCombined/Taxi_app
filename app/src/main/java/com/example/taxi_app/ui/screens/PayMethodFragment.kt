@@ -19,6 +19,9 @@ class PayMethodFragment : BaseFragment(R.layout.fragment_pay_method) {
 
     override fun onStart() {
         super.onStart()
-        APP_ACTIVITY.title = "Способ оплаты"
+    }
+
+    override fun onResume() {
+        super.onResume()
     }
 }

@@ -1,19 +1,17 @@
 package com.example.taxi_app.ui
 
 import androidx.fragment.app.Fragment
-import com.example.taxi_app.MainActivity
+import com.example.taxi_app.utilites.APP_ACTIVITY
 
 //Base fragment
 open class BaseFragment(layout: Int) : Fragment(layout) {
 
     override fun onStart() {
         super.onStart()
-        val parentActivity = activity
-        if (parentActivity is MainActivity) parentActivity.appDrawer.disableDrawer()
+        APP_ACTIVITY.appDrawer.disableDrawer()
     }
     override fun onStop() {
         super.onStop()
-        val parentActivity = activity
-        if (parentActivity is MainActivity) parentActivity.appDrawer.enableDrawer()
+        APP_ACTIVITY.appDrawer.enableDrawer()
     }
 }

@@ -20,18 +20,12 @@ class EnterCodeFragment(private val phoneNumber: String, val id: String) : Fragm
 
     override fun onStart() {
         super.onStart()
-        APP_ACTIVITY.title = phoneNumber
-        binding.registerInputCode.addTextChangedListener(AppTextWatcher {
-            val string = binding.registerInputCode.text.toString()
-            if (string.length == 6) {
-                enterCode()
-            }
-        })
+        binding.enterCodeBtnFurther.setOnClickListener { enterCode() }
     }
 
     //Enter code
     private fun enterCode() {
-        val code = binding.registerInputCode.text.toString()
+        val code = binding.enterCodeEdtText.text.toString()
         val credential = PhoneAuthProvider.getCredential(id, code)
         AUTH.signInWithCredential(credential).addOnCompleteListener { task ->
             if (task.isSuccessful) {

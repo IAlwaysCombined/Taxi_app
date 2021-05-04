@@ -7,48 +7,74 @@
     tools:context=".ui.screens.EnterPhoneNumberFragment">
 
     <TextView
-        android:id="@+id/register_text_view_phone_number"
-        android:layout_width="wrap_content"
+        android:id="@+id/enter_phone_text_view_description"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Введите номер"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="20dp"
+        android:text="Номер телефона"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:textColor="@color/black"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/register_text_view_info"
+        android:id="@+id/enter_phone_text_view_description_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="На него мы отправим код \n подтверждения"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/register_text_view_phone_number"
-        app:layout_constraintStart_toStartOf="@+id/register_text_view_phone_number"
-        app:layout_constraintTop_toBottomOf="@id/register_text_view_phone_number" />
+        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
+        android:text="На него мы отправим\n код подтверждения"
+        android:textAlignment="center"
+        android:textColor="@color/gray_600"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/register_edt_text_enter_phone_number"
+        android:id="@+id/enter_phone_edt_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+        android:maxLength="13"
+        android:inputType="phone"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/register_text_view_info" />
+        app:layout_constraintTop_toBottomOf="@+id/enter_phone_text_view_description_two" />
 
-    <Button
-        android:id="@+id/register_btn"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/enter_phone_btn_further"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Войти"
+        android:background="#f8f8f8"
+        android:orientation="horizontal"
+        android:padding="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_edt_text_enter_phone_number" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Продолжить" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="right|center"
+                android:src="@drawable/ic_next" />
+        </FrameLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

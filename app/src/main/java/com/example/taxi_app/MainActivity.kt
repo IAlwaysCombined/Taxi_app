@@ -15,7 +15,7 @@ import com.example.taxi_app.utilites.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var toolbar: Toolbar
+    lateinit var toolbar: Toolbar
     lateinit var appDrawer: AppDrawer
 
 
@@ -24,6 +24,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         APP_ACTIVITY = this
+    }
+
+    override fun onResume() {
+        super.onResume()
+        initFields()
+        initFunc()
     }
 
     //Start fun MainActivity
@@ -38,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         toolbar = binding.mainToolbar
         appDrawer = AppDrawer()
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
         appDrawer.create()
         initUser()
         initFirebase()

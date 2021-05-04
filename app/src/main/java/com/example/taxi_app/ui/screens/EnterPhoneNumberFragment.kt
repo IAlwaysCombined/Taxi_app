@@ -54,12 +54,12 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
                 )
             }
         }
-        binding.registerBtn.setOnClickListener { sendCode() }
+        binding.enterPhoneBtnFurther.setOnClickListener { sendCode() }
     }
 
     //Change edit number phone
     private fun sendCode() {
-        if (binding.registerEdtTextEnterPhoneNumber.text.toString().isEmpty()) {
+        if (binding.enterPhoneEdtText.text.toString().isEmpty()) {
             showToast("Введите номер телефона")
         } else {
             authUser()
@@ -68,7 +68,7 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
 
     //Init auth user
     private fun authUser() {
-        phoneNumber = binding.registerEdtTextEnterPhoneNumber.text.toString()
+        phoneNumber = binding.enterPhoneEdtText.text.toString()
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
             phoneNumber,
             60,

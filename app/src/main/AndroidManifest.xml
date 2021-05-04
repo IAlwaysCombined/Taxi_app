@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Taxi_app">
         <activity android:name=".activity.SplashScreenActivity" />
-        <activity android:name=".activity.AuthActivity" />
+        <activity android:name=".activity.AuthActivity" android:windowSoftInputMode="stateVisible|adjustResize" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
