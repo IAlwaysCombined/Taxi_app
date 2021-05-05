@@ -1,6 +1,7 @@
 package com.example.taxi_app.models
 
-data class User(
+
+data class UserModel(
     val id: String = "",
     val role: String = "",
     val phone_user: String = "",

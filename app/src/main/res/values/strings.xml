@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Taxi_app</string>
+    <!-- All app strings. -->
+    <string name="toast_data_update">Данные обновлены</string>
     <!-- Change user data strings. -->
     <string name="change_name_enter_name_description_hint">Ведите имя</string>
     <string name="change_user_name_edt_name_hint">Как вас зовут?</string>

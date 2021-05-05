@@ -1,14 +1,15 @@
 package com.example.taxi_app.ui.screens
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import com.example.taxi_app.R
+import com.example.taxi_app.database.*
 import com.example.taxi_app.databinding.FragmentChangeEmailBinding
 import com.example.taxi_app.ui.BaseFragment
-import com.example.taxi_app.utilites.*
+import com.example.taxi_app.utilites.APP_ACTIVITY
+import com.example.taxi_app.utilites.backStack
+import com.example.taxi_app.utilites.hideKeyboard
+import com.example.taxi_app.utilites.showToast
 
 
 class ChangeEmailFragment : BaseFragment(R.layout.fragment_change_email) {

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.taxi_app.R
+import com.example.taxi_app.database.AUTH
 import com.example.taxi_app.databinding.FragmentEnterPhoneNumberBinding
 import com.example.taxi_app.utilites.*
 import com.google.firebase.FirebaseException

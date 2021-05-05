@@ -1,12 +1,17 @@
 package com.example.taxi_app.ui.screens
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.example.taxi_app.R
 import com.example.taxi_app.activity.AuthActivity
+import com.example.taxi_app.database.*
 import com.example.taxi_app.databinding.FragmentProfileBinding
 import com.example.taxi_app.ui.BaseFragment
 import com.example.taxi_app.utilites.*
+import com.theartofdev.edmodo.cropper.CropImage
+import com.theartofdev.edmodo.cropper.CropImageView
 
 
 class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
@@ -30,7 +35,6 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
 
     //Init fields
     private fun initFields(){
-        binding.profileExitBtn.setOnClickListener { exitApp() }
         binding.profilePhoneNumberUserTextView.text = PHONE
         binding.profileNameUserTextView.text = USER.name_user
         binding.profileEmailUserTextView.text = USER.email_user
@@ -38,12 +42,43 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
         binding.profileNameUserTextView.setOnClickListener { replaceFragment(ChangeNameFragment()) }
         binding.profileAvatarImageView.setOnClickListener { setImageAvatar() }
         binding.profileEmailUserTextView.setOnClickListener { replaceFragment(ChangeEmailFragment()) }
+        binding.profileExitBtn.setOnClickListener { exitApp() }
     }
 
     //Set image in circle image
     private fun setImageAvatar() {
-        //binding.profileAvatarImageView.setBackgroundResource(R.drawable.ic_photo)
+        CropImage.activity()
+            .setAspectRatio(1,1)
+            .setRequestedSize(600,600)
+            .setCropShape(CropImageView.CropShape.OVAL)
+            .start(APP_ACTIVITY, this)
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        /* Активность которая запускается для получения картинки для фото пользователя */
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE
+            && resultCode == Activity.RESULT_OK && data != null
+        ) {
+
+            val uri = CropImage.getActivityResult(data).uri
+            val path = REF_STORAGE_ROOT.child(
+                FOLDER_PROFILE_IMAGE
+            )
+                .child(UID)
+            putFileToStorage(uri, path) {
+                getUrlFromStorage(path) {
+                    putUrlToDatabase(it) {
+                        binding.profileAvatarImageView.downloadAndSetImage(it)
+                        showToast(getString(R.string.toast_data_update))
+                        USER.image_user = it
+                        APP_ACTIVITY.appDrawer.updateHeader()
+                    }
+                }
+            }
+        }
+    }
+
 
     //Exit account
     private fun exitApp() {
