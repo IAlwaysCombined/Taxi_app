@@ -24,7 +24,7 @@
     <TextView
         android:id="@+id/pay_method_text_view_cash"
         style="@style/text_view_pay_method_style"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="80dp"
         android:text="Наличные"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -31,10 +31,11 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
     //Init fields
     private fun initFields(){
         binding.profileExitBtn.setOnClickListener { exitApp() }
-        binding.profilePhoneUserTextViewPhone.text = PHONE
-        binding.profileNameUserTextViewName.text = USER.name_user
-        binding.profilePhoneUserTextViewPhone.setOnClickListener {  }
-        binding.profileNameUserTextViewName.setOnClickListener {  }
+        binding.profilePhoneUserTextView.text = PHONE
+        binding.profileNameUserTextView.text = USER.name_user
+        binding.profileNameUserTextView.setOnClickListener { replaceFragment(ChangeNameFragment()) }
+        binding.profilePhoneUserTextView.setOnClickListener {  }
+        binding.profileEmailUserTextView.setOnClickListener { replaceFragment(ChangeEmailFragment()) }
     }
 
     //Exit account

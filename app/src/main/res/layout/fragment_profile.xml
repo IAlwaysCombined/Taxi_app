@@ -7,32 +7,41 @@
     tools:context=".ui.screens.ProfileFragment">
 
     <TextView
-        android:id="@+id/profile_name_user_text_view_description_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="80dp"
-        android:text="Имя"
-
-        android:textSize="15sp"
+        android:id="@+id/profile_description_text_view"
+        style="@style/text_view_upper_text"
+        android:layout_marginVertical="60dp"
+        android:text="@string/profile_description_text_view_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/profile_name_user_text_view_name"
+        android:id="@+id/profile_name_user_text_view_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        android:text="Имя"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_description_text_view" />
+
+    <TextView
+        android:id="@+id/profile_name_user_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:textColor="@color/black"
         android:textSize="20sp"
+        android:hint="Введите имя"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:drawableEndCompat="@drawable/ic_baseline_navigate_next_24"
-        app:layout_constraintTop_toBottomOf="@id/profile_name_user_text_view_description_name" />
+        app:layout_constraintTop_toBottomOf="@id/profile_name_user_text_view_description" />
 
     <TextView
-        android:id="@+id/profile_phone_user_text_view_description_phone"
+        android:id="@+id/profile_phone_user_text_view_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
@@ -41,10 +50,10 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_name_user_text_view_name" />
+        app:layout_constraintTop_toBottomOf="@id/profile_name_user_text_view" />
 
     <TextView
-        android:id="@+id/profile_phone_user_text_view_phone"
+        android:id="@+id/profile_phone_user_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
@@ -53,7 +62,32 @@
         app:drawableEndCompat="@drawable/ic_baseline_navigate_next_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_phone_user_text_view_description_phone" />
+        app:layout_constraintTop_toBottomOf="@id/profile_phone_user_text_view_description" />
+
+    <TextView
+        android:id="@+id/profile_email_user_text_view_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        android:text="E-mail"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_phone_user_text_view" />
+
+    <TextView
+        android:id="@+id/profile_email_user_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:hint="Введите E-mail"
+        app:drawableEndCompat="@drawable/ic_baseline_navigate_next_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_email_user_text_view_description" />
 
     <TextView
         android:id="@+id/profile_exit_btn"

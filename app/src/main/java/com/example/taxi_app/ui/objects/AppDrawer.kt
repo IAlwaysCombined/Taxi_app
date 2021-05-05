@@ -3,13 +3,11 @@ package com.example.taxi_app.ui.objects
 import android.view.View
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.taxi_app.R
+import com.example.taxi_app.ui.screens.BecomeDriverFragment
 import com.example.taxi_app.ui.screens.HelpFragment
 import com.example.taxi_app.ui.screens.PayMethodFragment
 import com.example.taxi_app.ui.screens.ProfileFragment
-import com.example.taxi_app.utilites.APP_ACTIVITY
-import com.example.taxi_app.utilites.PHONE
-import com.example.taxi_app.utilites.initFirebase
-import com.example.taxi_app.utilites.replaceFragment
+import com.example.taxi_app.utilites.*
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
 import com.mikepenz.materialdrawer.Drawer
@@ -40,6 +38,7 @@ class AppDrawer() {
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
         APP_ACTIVITY.toolbar.setNavigationOnClickListener {
             APP_ACTIVITY.supportFragmentManager.popBackStack()
+            hideKeyboard()
         }
     }
 
@@ -56,10 +55,14 @@ class AppDrawer() {
     //Create header
     private fun createHeader() {
         currentProfile = ProfileDrawerItem()
+            .withName(USER.name_user)
             .withIcon(R.mipmap.ic_launcher)
             .withEmail(PHONE)
+            .withIdentifier(200)
         header = AccountHeaderBuilder()
+            .withProfileImagesClickable(false)
             .withActivity(APP_ACTIVITY)
+            .withSelectionListEnabledForSingleProfile(false)
             .withHeaderBackground(R.drawable.header)
             .addProfiles(
                 currentProfile
@@ -98,13 +101,19 @@ class AppDrawer() {
                     position: Int,
                     drawerItem: IDrawerItem<*>
                 ): Boolean {
-                    when (position) {
-                        1 -> APP_ACTIVITY.replaceFragment(ProfileFragment())
-                        2 -> APP_ACTIVITY.replaceFragment(PayMethodFragment())
-                        3 -> APP_ACTIVITY.replaceFragment(HelpFragment())
-                    }
+                    changeFragmentReplace(position)
                     return false
                 }
             }).build()
     }
+
+    private fun changeFragmentReplace(position: Int){
+        when (position) {
+            1 -> APP_ACTIVITY.replaceFragment(ProfileFragment())
+            2 -> APP_ACTIVITY.replaceFragment(PayMethodFragment())
+            3 -> APP_ACTIVITY.replaceFragment(HelpFragment())
+            4 -> APP_ACTIVITY.replaceFragment(BecomeDriverFragment())
+        }
+    }
+
 }

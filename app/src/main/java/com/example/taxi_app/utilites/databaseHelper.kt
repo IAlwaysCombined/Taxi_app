@@ -17,9 +17,10 @@ const val NODE_PHONES = "phones"
 
 //User const
 const val CHILD_ID = "id"
-const val CHILD_PHONE = "phone"
-const val CHILD_USERNAME = "username"
+const val CHILD_PHONE = "phone_user"
 const val CHILD_ROLE = "role"
+const val CHILD_NAME = "name_user"
+const val CHILD_EMAIL = "email_user"
 
 //Role user
 const val USER_ROLE = "user"
@@ -32,4 +33,12 @@ fun initFirebase() {
     REF_DATABASE_ROOT = FirebaseDatabase.getInstance().reference
     UID = AUTH.currentUser?.uid.toString()
     PHONE = AUTH.currentUser?.phoneNumber.toString()
+}
+
+//Initial Users
+fun initUser() {
+    REF_DATABASE_ROOT.child(NODE_USERS).child(UID)
+        .addValueEventListener(AppValueEventListener {
+            USER = it.getValue(User::class.java) ?: User()
+        })
 }

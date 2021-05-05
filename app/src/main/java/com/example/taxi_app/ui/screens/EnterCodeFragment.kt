@@ -38,8 +38,8 @@ class EnterCodeFragment(private val phoneNumber: String, val id: String) : Fragm
                 REF_DATABASE_ROOT.child(NODE_USERS).child(uid)
                     .addListenerForSingleValueEvent(AppValueEventListener{ it ->
 
-                        if (!it.hasChild(CHILD_USERNAME)){
-                            dateMap[CHILD_USERNAME] = uid
+                        if (!it.hasChild(CHILD_NAME)){
+                            dateMap[CHILD_NAME] = " "
                         }
 
                         REF_DATABASE_ROOT.child(

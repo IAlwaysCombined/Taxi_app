@@ -9,6 +9,9 @@ import com.example.taxi_app.ui.screens.MapsFragment
 import com.example.taxi_app.models.User
 import com.example.taxi_app.ui.objects.AppDrawer
 import com.example.taxi_app.utilites.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 @Suppress("DEPRECATION")
@@ -24,10 +27,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         APP_ACTIVITY = this
+        initFirebase()
     }
 
     override fun onResume() {
         super.onResume()
+        initUser()
         initFields()
         initFunc()
     }
@@ -35,6 +40,7 @@ class MainActivity : AppCompatActivity() {
     //Start fun MainActivity
     override fun onStart() {
         super.onStart()
+        initUser()
         initFields()
         initFunc()
     }
@@ -45,26 +51,16 @@ class MainActivity : AppCompatActivity() {
         appDrawer = AppDrawer()
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        appDrawer.create()
-        initUser()
-        initFirebase()
     }
 
     //init Func
     private fun initFunc() {
         if (AUTH.currentUser != null) {
+            appDrawer.create()
             replaceFragment(MapsFragment())
         }
         else{
             replaceActivity(AuthActivity())
         }
-    }
-
-    //Initial Users
-    private fun initUser() {
-        REF_DATABASE_ROOT.child(NODE_USERS).child(UID)
-            .addListenerForSingleValueEvent(AppValueEventListener {
-                USER = it.getValue(User::class.java) ?: User()
-            })
     }
 }
