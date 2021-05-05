@@ -3,6 +3,7 @@ package com.example.taxi_app.utilites
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import android.widget.Toast
@@ -66,7 +67,7 @@ fun ImageView.downloadAndSetImage(url: String) {
 }
 
 //Back stack fragment
-fun backStack(){
+fun backStack() {
     val fragment: FragmentManager = APP_ACTIVITY.supportFragmentManager
     fragment.popBackStack()
 }

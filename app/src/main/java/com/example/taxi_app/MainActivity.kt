@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.taxi_app.activity.AuthActivity
 import com.example.taxi_app.database.AUTH
+import com.example.taxi_app.database.initBecomeDriver
 import com.example.taxi_app.database.initFirebase
 import com.example.taxi_app.database.initUser
 import com.example.taxi_app.databinding.ActivityMainBinding
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         APP_ACTIVITY = this
         initFirebase()
+        initBecomeDriver()
         initUser{
             initFields()
             initFunc()

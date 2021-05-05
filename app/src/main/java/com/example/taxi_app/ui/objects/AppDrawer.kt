@@ -8,10 +8,10 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.example.taxi_app.R
 import com.example.taxi_app.database.PHONE
 import com.example.taxi_app.database.USER
-import com.example.taxi_app.ui.screens.BecomeDriverFragment
+import com.example.taxi_app.ui.screens.become_driver.BecomeDriverFragment
 import com.example.taxi_app.ui.screens.HelpFragment
 import com.example.taxi_app.ui.screens.PayMethodFragment
-import com.example.taxi_app.ui.screens.ProfileFragment
+import com.example.taxi_app.ui.screens.change_user_data.ProfileFragment
 import com.example.taxi_app.utilites.*
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.AccountHeaderBuilder

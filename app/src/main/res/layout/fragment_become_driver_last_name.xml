@@ -4,33 +4,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.screens.change_user_data.ChangeEmailFragment">
+    tools:context=".ui.screens.become_driver.BecomeDriverLastNameFragment">
 
     <TextView
-        android:id="@+id/change_email_description"
+        android:id="@+id/become_driver_last_name_description"
         style="@style/change_user_data_text_view_description_style"
-        android:text="@string/change_email_enter_email_description_hint"
+        android:text="@string/become_driver_text_view_description_last_name_last_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
-        android:layout_width="350dp"
-        android:id="@+id/change_email_edt_text"
+        android:id="@+id/become_driver_last_name_edt_text"
         style="@style/change_user_data_edt_text_style"
-        android:hint="@string/change_user_email_edt_name_hint"
-        app:layout_constraintBottom_toTopOf="@+id/change_email_btn_save_changes"
+        android:layout_width="350dp"
+        android:hint="@string/become_driver_text_view_description_last_name_last_name"
+        app:layout_constraintBottom_toTopOf="@+id/become_driver_last_name_btn_save_changes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/change_email_description"
+        app:layout_constraintTop_toBottomOf="@+id/become_driver_last_name_description"
         tools:ignore="TextFields" />
 
     <Button
-        android:id="@+id/change_email_btn_save_changes"
+        android:id="@+id/become_driver_last_name_btn_save_changes"
         style="@style/change_user_data_btn_style"
         android:text="@string/change_user_data_save_btn_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

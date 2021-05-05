@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.screens.ProfileFragment">
+    tools:context=".ui.screens.change_user_data.ProfileFragment">
 
     <TextView
         android:id="@+id/profile_description_text_view"

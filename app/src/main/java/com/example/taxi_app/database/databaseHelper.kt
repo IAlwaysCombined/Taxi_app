@@ -1,6 +1,7 @@
 package com.example.taxi_app.database
 
 import android.net.Uri
+import com.example.taxi_app.models.BecomeDriverModel
 import com.example.taxi_app.models.UserModel
 import com.example.taxi_app.utilites.AppValueEventListener
 import com.example.taxi_app.utilites.showToast
@@ -13,6 +14,7 @@ import com.google.firebase.storage.StorageReference
 fun initFirebase() {
     AUTH = FirebaseAuth.getInstance()
     USER = UserModel()
+    BECOMEDRIVER = BecomeDriverModel()
     REF_DATABASE_ROOT = FirebaseDatabase.getInstance().reference
     REF_STORAGE_ROOT = FirebaseStorage.getInstance().reference
     UID = AUTH.currentUser?.uid.toString()
@@ -25,6 +27,14 @@ inline fun initUser(crossinline function: () -> Unit) {
         .addListenerForSingleValueEvent(AppValueEventListener {
             USER = it.getValue(UserModel::class.java) ?: UserModel()
             function()
+        })
+}
+
+//Initial Become Driver
+fun initBecomeDriver() {
+    REF_DATABASE_ROOT.child(NODE_PRE_ORDER_DRIVERS).child(UID)
+        .addValueEventListener(AppValueEventListener {
+            BECOMEDRIVER = it.getValue(BecomeDriverModel::class.java) ?: BecomeDriverModel()
         })
 }
 

@@ -1,4 +1,4 @@
-package com.example.taxi_app.ui.screens
+package com.example.taxi_app.ui.screens.auth
 
 import android.os.Bundle
 import android.view.View

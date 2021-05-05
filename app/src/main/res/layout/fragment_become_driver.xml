@@ -3,8 +3,126 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.screens.BecomeDriverFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.screens.become_driver.BecomeDriverFragment">
 
+    <TextView
+        android:id="@+id/become_driver_description_text_view"
+        style="@style/text_view_upper_text"
+        android:layout_marginVertical="60dp"
+        android:text="@string/become_driver_description_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/become_driver_name_text_view_description"
+        style="@style/profile_text_view_description_data"
+        android:text="@string/become_driver_text_view_description_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/become_driver_description_text_view" />
+
+    <TextView
+        android:id="@+id/become_driver_name_text_view"
+        style="@style/profile_text_view_data_user"
+        android:hint="@string/become_driver_text_view_description_name_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:drawableEndCompat="@drawable/ic_baseline_navigate_next_24"
+        app:layout_constraintTop_toBottomOf="@id/become_driver_name_text_view_description" />
+
+    <TextView
+        android:id="@+id/become_driver_surname_text_view_description"
+        style="@style/profile_text_view_description_data"
+        android:text="@string/become_driver_text_view_description_surname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/become_driver_name_text_view" />
+
+    <TextView
+        android:id="@+id/become_driver_surname_text_view"
+        style="@style/profile_text_view_data_user"
+        android:hint="@string/become_driver_text_view_description_surname_surname"
+        app:drawableEndCompat="@drawable/ic_baseline_navigate_next_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/become_driver_surname_text_view_description" />
+
+    <TextView
+        android:id="@+id/become_driver_last_name_text_view_description"
+        style="@style/profile_text_view_description_data"
+        android:text="@string/become_driver_text_view_description_last_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/become_driver_surname_text_view" />
+
+    <TextView
+        android:id="@+id/become_driver_last_name_text_view"
+        style="@style/profile_text_view_data_user"
+        android:hint="@string/become_driver_text_view_description_last_name_last_name"
+        app:drawableEndCompat="@drawable/ic_baseline_navigate_next_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/become_driver_last_name_text_view_description" />
+
+    <TextView
+        android:id="@+id/become_driver_car_text_view_description"
+        style="@style/profile_text_view_description_data"
+        android:text="@string/become_driver_text_view_description_car"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/become_driver_last_name_text_view" />
+
+    <TextView
+        android:id="@+id/become_driver_car_text_view"
+        style="@style/profile_text_view_data_user"
+        android:hint="@string/become_driver_text_view_description_car_car"
+        app:drawableEndCompat="@drawable/ic_baseline_navigate_next_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/become_driver_car_text_view_description" />
+
+    <TextView
+        android:id="@+id/become_driver_car_number_text_view_description"
+        style="@style/profile_text_view_description_data"
+        android:text="@string/become_driver_text_view_description_car_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/become_driver_car_text_view" />
+
+    <TextView
+        android:id="@+id/become_driver_car_number_text_view"
+        style="@style/profile_text_view_data_user"
+        android:hint="@string/become_driver_text_view_description_car_number_car_number"
+        app:drawableEndCompat="@drawable/ic_baseline_navigate_next_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/become_driver_car_number_text_view_description" />
+
+    <TextView
+        android:id="@+id/become_driver_photo_text_view_description"
+        style="@style/profile_text_view_description_data"
+        android:text="@string/become_driver_text_view_description_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/become_driver_car_number_text_view" />
+
+    <TextView
+        android:id="@+id/become_driver_car_photo_text_view"
+        style="@style/profile_text_view_data_user"
+        android:hint="@string/become_driver_text_view_description_photo_photo"
+        app:drawableEndCompat="@drawable/ic_baseline_navigate_next_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/become_driver_photo_text_view_description" />
+
+    <Button
+        android:id="@+id/become_driver_btn_save_changes"
+        style="@style/change_user_data_btn_style"
+        android:text="@string/become_driver_data_send_btn_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

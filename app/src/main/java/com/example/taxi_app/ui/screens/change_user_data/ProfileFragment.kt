@@ -1,4 +1,4 @@
-package com.example.taxi_app.ui.screens
+package com.example.taxi_app.ui.screens.change_user_data
 
 import android.app.Activity
 import android.content.Intent
@@ -9,6 +9,8 @@ import com.example.taxi_app.activity.AuthActivity
 import com.example.taxi_app.database.*
 import com.example.taxi_app.databinding.FragmentProfileBinding
 import com.example.taxi_app.ui.BaseFragment
+import com.example.taxi_app.ui.screens.change_user_data.ChangeEmailFragment
+import com.example.taxi_app.ui.screens.change_user_data.ChangeNameFragment
 import com.example.taxi_app.utilites.*
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView

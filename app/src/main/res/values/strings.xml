@@ -25,4 +25,31 @@
     <string name="pay_method_text_view_cash">Наличные</string>
     <string name="pay_method_text_view_g_pay">Google pay</string>
     <string name="pay_method_text_view_card">Карта</string>
+    <!--Become driver strings. -->
+    <string name="become_driver_description_text_view">Стать водителем</string>
+    <string name="become_driver_data_send_btn_text">Отправить заявку</string>
+    <string name="become_driver_text_view_description_name">Имя</string>
+    <string name="become_driver_text_view_description_name_name">Введите имя</string>
+    <string name="become_driver_text_view_description_surname">Отчество</string>
+    <string name="become_driver_text_view_description_surname_surname">Введите отчество</string>
+    <string name="become_driver_text_view_description_last_name">Фамилия</string>
+    <string name="become_driver_text_view_description_last_name_last_name">Введите фамилию</string>
+    <string name="become_driver_text_view_description_car">Автомобиль</string>
+    <string name="become_driver_text_view_description_car_car">Введите наименование авто</string>
+    <string name="become_driver_text_view_description_car_number">Номер автомобиля</string>
+    <string name="become_driver_text_view_description_car_number_car_number">Введите номер авто</string>
+    <string name="become_driver_text_view_description_photo">Фото</string>
+    <string name="become_driver_text_view_description_photo_photo">Фото авто, вод. удостоверения</string>
+    <string name="become_driver_name_fill_name_toast">Заполните поле имя</string>
+    <string name="become_driver_surname_fill_name_toast">Заполните поле отчество</string>
+    <string name="become_driver_car_number_fill_name_toast">Заполните поле номер авто</string>
+    <string name="become_driver_car_fill_name_toast">Заполните поле данные об авто</string>
+    <string name="become_driver_last_name_fill_name_toast">Заполните поле фамилия</string>
+    <string name="become_driver_name_is_successful_toast">Имя успешно добавлено</string>
+    <string name="become_driver_surname_is_successful_toast">Отчество успешно добавлено</string>
+    <string name="become_driver_car_number_is_successful_toast">Номер авто успешно добавлен</string>
+    <string name="become_driver_car_is_successful_toast">Данные об авто добавлены</string>
+    <string name="become_driver_last_name_is_successful_toast">Фамилия успешно добавлено</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
