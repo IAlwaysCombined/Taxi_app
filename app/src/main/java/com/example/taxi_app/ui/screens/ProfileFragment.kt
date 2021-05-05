@@ -34,9 +34,15 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
         binding.profilePhoneNumberUserTextView.text = PHONE
         binding.profileNameUserTextView.text = USER.name_user
         binding.profileEmailUserTextView.text = USER.email_user
+        binding.profileAvatarImageView.downloadAndSetImage(USER.image_user)
         binding.profileNameUserTextView.setOnClickListener { replaceFragment(ChangeNameFragment()) }
-        binding.profilePhoneNumberUserTextView.setOnClickListener {  }
+        binding.profileAvatarImageView.setOnClickListener { setImageAvatar() }
         binding.profileEmailUserTextView.setOnClickListener { replaceFragment(ChangeEmailFragment()) }
+    }
+
+    //Set image in circle image
+    private fun setImageAvatar() {
+        //binding.profileAvatarImageView.setBackgroundResource(R.drawable.ic_photo)
     }
 
     //Exit account

@@ -68,7 +68,6 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
         super.onStart()
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(APP_ACTIVITY)
         fetchLocation()
-        APP_ACTIVITY.title = "Карта"
     }
 
     private fun initView(root: View?){

@@ -2,7 +2,6 @@ package com.example.taxi_app.ui.screens
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
 import com.example.taxi_app.R
 import com.example.taxi_app.databinding.FragmentChangeNameBinding
 import com.example.taxi_app.ui.BaseFragment
@@ -30,8 +29,9 @@ class ChangeNameFragment : BaseFragment(R.layout.fragment_change_name) {
             val dateMap = mutableMapOf<String, Any>()
             dateMap[CHILD_NAME] = userName
             REF_DATABASE_ROOT.child(NODE_USERS).child(UID).updateChildren(dateMap)
+            APP_ACTIVITY.appDrawer.updateHeader()
             showToast(getString(R.string.change_user_name_is_successful_toast))
-            replaceFragment(ProfileFragment())
+            backStack()
             hideKeyboard()
         }
         else{

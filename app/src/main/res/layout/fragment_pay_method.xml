@@ -6,105 +6,103 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.screens.PayMethodFragment">
 
-    <View
-        style="@style/underline_style"
-        app:layout_constraintBottom_toTopOf="@+id/pay_method_text_view_cash"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_cash"
-        app:layout_constraintTop_toTopOf="@id/pay_method_text_view_cash"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/pay_method_text_view_cash"
-        app:layout_constraintBottom_toBottomOf="@id/pay_method_text_view_cash"/>
-
     <TextView
-        android:id="@+id/pay_method_text_view_cash"
-        style="@style/text_view_pay_method_style"
-        android:layout_marginTop="80dp"
-        android:text="Наличные"
+        android:id="@+id/pay_method_description_text_view"
+        style="@style/text_view_upper_text"
+        android:layout_marginVertical="60dp"
+        android:text="@string/pay_method_description_text_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RadioButton
-        android:id="@+id/pay_method_radio_btn_cash"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/pay_method_text_view_cash"
-        app:layout_constraintEnd_toEndOf="@+id/pay_method_text_view_cash"
-        app:layout_constraintTop_toTopOf="@+id/pay_method_text_view_cash" />
-
-    <View
-        style="@style/underline_style"
+        android:layout_margin="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pay_method_text_view_cash" />
+        app:layout_constraintTop_toBottomOf="@id/pay_method_description_text_view">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_google_pay"
-        app:layout_constraintTop_toTopOf="@id/pay_method_text_view_g_pay"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/pay_method_text_view_g_pay"
-        app:layout_constraintBottom_toBottomOf="@id/pay_method_text_view_g_pay"/>
+        <LinearLayout
+            android:id="@+id/pay_method_text_view_cash"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/pay_method_text_view_g_pay"
-        style="@style/text_view_pay_method_style"
-        android:text="Google pay"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pay_method_text_view_cash" />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_cash"/>
 
-    <RadioButton
-        android:id="@+id/pay_method_radio_btn_g_pay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/pay_method_text_view_g_pay"
-        app:layout_constraintEnd_toEndOf="@+id/pay_method_text_view_g_pay"
-        app:layout_constraintTop_toTopOf="@+id/pay_method_text_view_g_pay" />
+            <TextView
+                style="@style/text_view_pay_method_style"
+                android:text="@string/pay_method_text_view_cash"/>
 
-    <View
-        style="@style/underline_style"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pay_method_text_view_g_pay" />
+            <RadioButton
+                android:id="@+id/pay_method_radio_btn_cash"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_credit_card"
-        app:layout_constraintTop_toTopOf="@id/pay_method_text_view_card"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/pay_method_text_view_card"
-        app:layout_constraintBottom_toBottomOf="@id/pay_method_text_view_card"/>
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/pay_method_text_view_card"
-        style="@style/text_view_pay_method_style"
-        android:text="Карта"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pay_method_text_view_g_pay" />
+        <View
+            style="@style/underline_style"/>
 
-    <RadioButton
-        android:id="@+id/pay_method_radio_btn_card"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/pay_method_text_view_card"
-        app:layout_constraintEnd_toEndOf="@+id/pay_method_text_view_card"
-        app:layout_constraintTop_toTopOf="@+id/pay_method_text_view_card" />
+        <LinearLayout
+            android:id="@+id/pay_method_text_view_g_pay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start"
+            android:orientation="horizontal">
 
-    <View
-        style="@style/underline_style"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pay_method_text_view_card" />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_google_pay"/>
+
+            <TextView
+                style="@style/text_view_pay_method_style"
+                android:text="@string/pay_method_text_view_g_pay"/>
+
+            <RadioButton
+                android:id="@+id/pay_method_radio_btn_g_pay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+        <View
+            style="@style/underline_style"/>
+
+        <LinearLayout
+            android:id="@+id/pay_method_text_view_card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_credit_card"/>
+
+            <TextView
+                style="@style/text_view_pay_method_style"
+                android:text="@string/pay_method_text_view_card"/>
+
+            <RadioButton
+                android:id="@+id/pay_method_radio_btn_card"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+        <View
+            style="@style/underline_style"/>
+
+    </LinearLayout>
 
     <Button
         android:layout_width="match_parent"

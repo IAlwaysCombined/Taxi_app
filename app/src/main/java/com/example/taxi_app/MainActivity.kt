@@ -18,9 +18,8 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    lateinit var toolbar: Toolbar
     lateinit var appDrawer: AppDrawer
-
+    lateinit var toolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,33 +27,26 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         APP_ACTIVITY = this
         initFirebase()
+        initUser{
+            initFields()
+            initFunc()
+        }
     }
 
     override fun onResume() {
         super.onResume()
-        initUser()
-        initFields()
-        initFunc()
-    }
-
-    //Start fun MainActivity
-    override fun onStart() {
-        super.onStart()
-        initUser()
-        initFields()
-        initFunc()
     }
 
     //init Fields
     private fun initFields(){
         toolbar = binding.mainToolbar
         appDrawer = AppDrawer()
-        setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
     }
 
     //init Func
     private fun initFunc() {
+        setSupportActionBar(toolbar)
         if (AUTH.currentUser != null) {
             appDrawer.create()
             replaceFragment(MapsFragment())

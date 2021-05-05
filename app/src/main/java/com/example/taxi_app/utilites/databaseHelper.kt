@@ -36,9 +36,11 @@ fun initFirebase() {
 }
 
 //Initial Users
-fun initUser() {
+inline fun initUser(crossinline function: () -> Unit) {
+    /* Функция высшего порядка, инициализация текущей модели USER */
     REF_DATABASE_ROOT.child(NODE_USERS).child(UID)
-        .addValueEventListener(AppValueEventListener {
+        .addListenerForSingleValueEvent(AppValueEventListener {
             USER = it.getValue(User::class.java) ?: User()
+            function()
         })
 }

@@ -8,14 +8,17 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.view.inputmethod.InputMethodManager
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.example.taxi_app.MainActivity
 import com.example.taxi_app.R
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.maps.SupportMapFragment
+import com.squareup.picasso.Picasso
 
 fun showToast(message: String) {
     Toast.makeText(APP_ACTIVITY, message, Toast.LENGTH_SHORT).show()
@@ -53,9 +56,24 @@ fun restartActivity() {
     APP_ACTIVITY.finish()
 }
 
+//Hide keyboard
 fun hideKeyboard() {
-    /* Функция скрывает клавиатуру */
     val imm: InputMethodManager = APP_ACTIVITY.getSystemService(Context.INPUT_METHOD_SERVICE)
             as InputMethodManager
     imm.hideSoftInputFromWindow(APP_ACTIVITY.window.decorView.windowToken, 0)
+}
+
+//Download and sat picture
+fun ImageView.downloadAndSetImage(url: String) {
+    Picasso.get()
+        .load(url)
+        .fit()
+        .placeholder(R.drawable.ic_photo)
+        .into(this)
+}
+
+//Back stack fragment
+fun backStack(){
+    val fragment: FragmentManager = APP_ACTIVITY.supportFragmentManager
+    fragment.popBackStack()
 }

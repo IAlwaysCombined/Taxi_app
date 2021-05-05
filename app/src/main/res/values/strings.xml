@@ -18,4 +18,9 @@
     <string name="profile_text_view_description_phone_number">Номер телефона</string>
     <string name="profile_text_view_description_name_name">Введите имя</string>
     <string name="profile_text_view_description_email_email">Введите E-mail</string>
+    <!-- Pay method user strings. -->
+    <string name="pay_method_description_text_view">Способ оплаты</string>
+    <string name="pay_method_text_view_cash">Наличные</string>
+    <string name="pay_method_text_view_g_pay">Google pay</string>
+    <string name="pay_method_text_view_card">Карта</string>
 </resources>

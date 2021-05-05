@@ -32,8 +32,9 @@ class ChangeEmailFragment : BaseFragment(R.layout.fragment_change_email) {
             val dateMap = mutableMapOf<String, Any>()
             dateMap[CHILD_EMAIL] = userEmail
             REF_DATABASE_ROOT.child(NODE_USERS).child(UID).updateChildren(dateMap)
+            APP_ACTIVITY.appDrawer.updateHeader()
             showToast(getString(R.string.change_user_email_is_successful_toast))
-            replaceFragment(ProfileFragment())
+            backStack()
             hideKeyboard()
         }
         else{

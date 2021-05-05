@@ -6,4 +6,5 @@ data class User(
     val phone_user: String = "",
     var name_user: String = "",
     var email_user: String = "",
+    var image_user: String = "empty",
 )
