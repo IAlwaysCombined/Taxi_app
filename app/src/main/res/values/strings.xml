@@ -1,17 +1,21 @@
 <resources>
     <string name="app_name">Taxi_app</string>
-
-    <string name="profile_exit_btn_text">Выйти</string>
-    <string name="profile_text_view_description_profile_text">Профиль</string>
-    <string name="change_user_name_edt_name_hint">Как вас зовут?</string>
-    <string name="change_user_email_edt_name_hint">example@gmail.com</string>
+    <!-- Change user data strings. -->
     <string name="change_name_enter_name_description_hint">Ведите имя</string>
-    <string name="change_email_enter_email_description_hint">Ведите электроную почту</string>
-    <string name="change_user_data_save_btn_text">Сохранить</string>
+    <string name="change_user_name_edt_name_hint">Как вас зовут?</string>
     <string name="change_user_name_is_successful_toast">Имя успешно обновлено</string>
-    <string name="change_user_email_is_successful_toast">E-mail успешно добавлен</string>
     <string name="change_user_name_fill_name_toast">Заполните поле имя</string>
+    <string name="change_email_enter_email_description_hint">Ведите электроную почту</string>
+    <string name="change_user_email_edt_name_hint">example@gmail.com</string>
+    <string name="change_user_email_is_successful_toast">E-mail успешно добавлен</string>
     <string name="change_user_email_fill_email_toast">Заполните поле e-mail</string>
-    <string name="profile_description_text_view_text">Профиль</string>
-
+    <string name="change_user_data_save_btn_text">Сохранить</string>
+    <!-- Profile user strings. -->
+    <string name="profile_description_text_view">Профиль</string>
+    <string name="profile_exit_btn_text">Выйти из профиля</string>
+    <string name="profile_text_view_description_name">Имя</string>
+    <string name="profile_text_view_description_email">E-mail</string>
+    <string name="profile_text_view_description_phone_number">Номер телефона</string>
+    <string name="profile_text_view_description_name_name">Введите имя</string>
+    <string name="profile_text_view_description_email_email">Введите E-mail</string>
 </resources>

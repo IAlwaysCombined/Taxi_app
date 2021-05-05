@@ -7,10 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.taxi_app.R
 import com.example.taxi_app.databinding.FragmentChangeEmailBinding
+import com.example.taxi_app.ui.BaseFragment
 import com.example.taxi_app.utilites.*
 
 
-class ChangeEmailFragment : Fragment(R.layout.fragment_change_email) {
+class ChangeEmailFragment : BaseFragment(R.layout.fragment_change_email) {
 
     private lateinit var binding: FragmentChangeEmailBinding
 
@@ -21,6 +22,7 @@ class ChangeEmailFragment : Fragment(R.layout.fragment_change_email) {
 
     override fun onResume() {
         super.onResume()
+        initFields()
         binding.changeEmailBtnSaveChanges.setOnClickListener { saveUserEmail() }
     }
 
@@ -37,5 +39,10 @@ class ChangeEmailFragment : Fragment(R.layout.fragment_change_email) {
         else{
             showToast(getString(R.string.change_user_email_fill_email_toast))
         }
+    }
+
+    //Initial fields
+    private fun initFields() {
+        binding.changeEmailEdtText.setText(USER.email_user)
     }
 }

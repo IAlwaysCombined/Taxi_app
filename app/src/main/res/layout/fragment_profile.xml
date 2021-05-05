@@ -10,80 +10,55 @@
         android:id="@+id/profile_description_text_view"
         style="@style/text_view_upper_text"
         android:layout_marginVertical="60dp"
-        android:text="@string/profile_description_text_view_text"
+        android:text="@string/profile_description_text_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/profile_name_user_text_view_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="20dp"
-        android:text="Имя"
-        android:textSize="15sp"
+        android:id="@+id/profile_phone_number_user_text_view_description"
+        style="@style/profile_text_view_description_data"
+        android:text="@string/profile_text_view_description_phone_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_description_text_view" />
 
     <TextView
+        android:id="@+id/profile_phone_number_user_text_view"
+        style="@style/profile_text_view_data_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_phone_number_user_text_view_description" />
+
+    <TextView
+        android:id="@+id/profile_name_user_text_view_description"
+        style="@style/profile_text_view_description_data"
+        android:text="@string/profile_text_view_description_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_phone_number_user_text_view" />
+
+    <TextView
         android:id="@+id/profile_name_user_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:hint="Введите имя"
+        style="@style/profile_text_view_data_user"
+        android:hint="@string/profile_text_view_description_name_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:drawableEndCompat="@drawable/ic_baseline_navigate_next_24"
         app:layout_constraintTop_toBottomOf="@id/profile_name_user_text_view_description" />
 
     <TextView
-        android:id="@+id/profile_phone_user_text_view_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="20dp"
-        android:text="Телефона"
-        android:textSize="15sp"
+        android:id="@+id/profile_email_user_text_view_description"
+        style="@style/profile_text_view_description_data"
+        android:text="@string/profile_text_view_description_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profile_name_user_text_view" />
 
     <TextView
-        android:id="@+id/profile_phone_user_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:drawableEndCompat="@drawable/ic_baseline_navigate_next_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_phone_user_text_view_description" />
-
-    <TextView
-        android:id="@+id/profile_email_user_text_view_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="20dp"
-        android:text="E-mail"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_phone_user_text_view" />
-
-    <TextView
         android:id="@+id/profile_email_user_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:hint="Введите E-mail"
+        style="@style/profile_text_view_data_user"
+        android:hint="@string/profile_text_view_description_email_email"
         app:drawableEndCompat="@drawable/ic_baseline_navigate_next_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -91,13 +66,8 @@
 
     <TextView
         android:id="@+id/profile_exit_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:padding="10sp"
-        android:textColor="@color/md_red_600"
-        android:textSize="20sp"
-        android:text="Выйти из профиля"
+        style="@style/profile_btn_text_exit_style"
+        android:text="@string/profile_exit_btn_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -19,6 +19,7 @@ class ChangeNameFragment : BaseFragment(R.layout.fragment_change_name) {
 
     override fun onResume() {
         super.onResume()
+        initFields()
         binding.changeNameBtnSaveChanges.setOnClickListener { saveUserName() }
     }
 
@@ -36,5 +37,10 @@ class ChangeNameFragment : BaseFragment(R.layout.fragment_change_name) {
         else{
             showToast(getString(R.string.change_user_name_fill_name_toast))
         }
+    }
+
+    //Initial fields
+    private fun initFields() {
+        binding.changeNameEdtText.setText(USER.name_user)
     }
 }
