@@ -50,7 +50,6 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
     //Set image in circle image
     private fun setImageAvatar() {
         CropImage.activity()
-            .setAspectRatio(1,1)
             .setRequestedSize(600,600)
             .setCropShape(CropImageView.CropShape.OVAL)
             .start(APP_ACTIVITY, this)

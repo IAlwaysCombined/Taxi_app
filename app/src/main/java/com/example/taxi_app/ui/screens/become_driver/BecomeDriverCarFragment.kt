@@ -8,12 +8,13 @@ import android.view.ViewGroup
 import com.example.taxi_app.R
 import com.example.taxi_app.database.*
 import com.example.taxi_app.databinding.FragmentBecomeDriverCarBinding
+import com.example.taxi_app.ui.BaseFragment
 import com.example.taxi_app.utilites.backStack
 import com.example.taxi_app.utilites.hideKeyboard
 import com.example.taxi_app.utilites.showToast
 
 
-class BecomeDriverCarFragment : Fragment(R.layout.fragment_become_driver_car) {
+class BecomeDriverCarFragment : BaseFragment(R.layout.fragment_become_driver_car) {
 
     private lateinit var binding: FragmentBecomeDriverCarBinding
 
@@ -24,6 +25,7 @@ class BecomeDriverCarFragment : Fragment(R.layout.fragment_become_driver_car) {
 
     override fun onResume() {
         super.onResume()
+        initFields()
         binding.becomeDriverCarBtnSaveChanges.setOnClickListener { saveBecomeDriverCar() }
     }
 
@@ -39,5 +41,10 @@ class BecomeDriverCarFragment : Fragment(R.layout.fragment_become_driver_car) {
         } else{
             showToast(getString(R.string.become_driver_car_fill_name_toast))
         }
+    }
+
+    //Initial fields
+    private fun initFields() {
+        binding.becomeDriverCarEdtText.setText(BECOMEDRIVER.car)
     }
 }

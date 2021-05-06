@@ -23,6 +23,7 @@ class BecomeDriverNameFragment: BaseFragment(R.layout.fragment_become_driver_nam
 
     override fun onResume() {
         super.onResume()
+        initFields()
         binding.becomeDriverNameBtnSaveChanges.setOnClickListener { saveBecomeDriverName() }
     }
 
@@ -38,6 +39,11 @@ class BecomeDriverNameFragment: BaseFragment(R.layout.fragment_become_driver_nam
         } else{
             showToast(getString(R.string.become_driver_name_fill_name_toast))
         }
+    }
+
+    //Initial fields
+    private fun initFields() {
+        binding.becomeDriverNameEdtText.setText(BECOMEDRIVER.name_driver)
     }
 }
 

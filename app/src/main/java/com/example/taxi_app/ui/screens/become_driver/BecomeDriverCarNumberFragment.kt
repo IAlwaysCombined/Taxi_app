@@ -8,12 +8,13 @@ import android.view.ViewGroup
 import com.example.taxi_app.R
 import com.example.taxi_app.database.*
 import com.example.taxi_app.databinding.FragmentBecomeDriverCarNumberBinding
+import com.example.taxi_app.ui.BaseFragment
 import com.example.taxi_app.utilites.backStack
 import com.example.taxi_app.utilites.hideKeyboard
 import com.example.taxi_app.utilites.showToast
 
 
-class BecomeDriverCarNumberFragment : Fragment(R.layout.fragment_become_driver_car_number) {
+class BecomeDriverCarNumberFragment : BaseFragment(R.layout.fragment_become_driver_car_number) {
 
     private lateinit var binding: FragmentBecomeDriverCarNumberBinding
 
@@ -24,6 +25,7 @@ class BecomeDriverCarNumberFragment : Fragment(R.layout.fragment_become_driver_c
 
     override fun onResume() {
         super.onResume()
+        initFields()
         binding.becomeDriverCarNumberBtnSaveChanges.setOnClickListener { saveBecomeDriverCarNumber() }
     }
 
@@ -39,5 +41,10 @@ class BecomeDriverCarNumberFragment : Fragment(R.layout.fragment_become_driver_c
         } else{
             showToast(getString(R.string.become_driver_surname_fill_name_toast))
         }
+    }
+
+    //Initial fields
+    private fun initFields() {
+        binding.becomeDriverCarNumberEdtText.setText(BECOMEDRIVER.car_number)
     }
 }

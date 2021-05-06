@@ -3,10 +3,7 @@ package com.example.taxi_app.ui.screens.become_driver
 import android.os.Bundle
 import android.view.View
 import com.example.taxi_app.R
-import com.example.taxi_app.database.CHILD_BECOME_DRIVER_LAST_NAME
-import com.example.taxi_app.database.NODE_PRE_ORDER_DRIVERS
-import com.example.taxi_app.database.REF_DATABASE_ROOT
-import com.example.taxi_app.database.UID
+import com.example.taxi_app.database.*
 import com.example.taxi_app.databinding.FragmentBecomeDriverLastNameBinding
 import com.example.taxi_app.ui.BaseFragment
 import com.example.taxi_app.utilites.backStack
@@ -25,6 +22,7 @@ class BecomeDriverLastNameFragment : BaseFragment(R.layout.fragment_become_drive
 
     override fun onResume() {
         super.onResume()
+        initFields()
         binding.becomeDriverLastNameBtnSaveChanges.setOnClickListener { saveBecomeDriverLastName() }
     }
 
@@ -42,4 +40,8 @@ class BecomeDriverLastNameFragment : BaseFragment(R.layout.fragment_become_drive
         }
     }
 
+    //Initial fields
+    private fun initFields() {
+        binding.becomeDriverLastNameEdtText.setText(BECOMEDRIVER.last_name_driver)
+    }
 }

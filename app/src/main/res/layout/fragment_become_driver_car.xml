@@ -18,7 +18,7 @@
         android:id="@+id/become_driver_car_edt_text"
         style="@style/change_user_data_edt_text_style"
         android:layout_width="350dp"
-        android:hint="@string/become_driver_text_view_description_car_car"
+        android:hint="@string/become_driver_text_view_description_car"
         app:layout_constraintBottom_toTopOf="@+id/become_driver_car_btn_save_changes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

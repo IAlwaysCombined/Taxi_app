@@ -46,6 +46,30 @@ inline fun putUrlToDatabase(url: String, crossinline function: () -> Unit) {
         .addOnFailureListener { showToast(it.message.toString()) }
 }
 
+//Send URL in realtime database
+inline fun putUrlToDatabaseBecomeDriver(url: String, crossinline function: () -> Unit) {
+    REF_DATABASE_ROOT.child(NODE_PRE_ORDER_DRIVERS).child(UID)
+        .child(FOLDER_PHOTO_DRIVER).setValue(url)
+        .addOnSuccessListener { function() }
+        .addOnFailureListener { showToast(it.message.toString()) }
+}
+
+//Send URL in realtime database
+inline fun putUrlToDatabaseBecomeDriverCar(url: String, crossinline function: () -> Unit) {
+    REF_DATABASE_ROOT.child(NODE_PRE_ORDER_DRIVERS).child(UID)
+        .child(FOLDER_PHOTO_CAR).setValue(url)
+        .addOnSuccessListener { function() }
+        .addOnFailureListener { showToast(it.message.toString()) }
+}
+
+//Send URL in realtime database
+inline fun putUrlToDatabaseBecomeDriverLicense(url: String, crossinline function: () -> Unit) {
+    REF_DATABASE_ROOT.child(NODE_PRE_ORDER_DRIVERS).child(UID)
+        .child(FOLDER_PHOTO_LICENSE).setValue(url)
+        .addOnSuccessListener { function() }
+        .addOnFailureListener { showToast(it.message.toString()) }
+}
+
 //Get URL image in storage
 inline fun getUrlFromStorage(path: StorageReference, crossinline function: (url: String) -> Unit) {
     path.downloadUrl

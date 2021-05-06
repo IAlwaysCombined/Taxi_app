@@ -27,6 +27,10 @@ const val CHILD_ROLE = "role"
 const val CHILD_NAME = "name_user"
 const val CHILD_EMAIL = "email_user"
 const val FOLDER_PROFILE_IMAGE = "profile_image"
+const val FOLDER_PHOTO_DRIVER = "photo_driver"
+const val FOLDER_PHOTO_LICENSE = "photo_licence"
+const val FOLDER_PHOTO_CAR = "photo_car"
+
 const val CHILD_PHOTO_URL = "image_user"
 
 //Become driver const
@@ -37,9 +41,10 @@ const val CHILD_BECOME_DRIVER_NAME = "name_driver"
 const val CHILD_BECOME_DRIVER_SURNAME = "surname_driver"
 const val CHILD_BECOME_DRIVER_LAST_NAME = "last_name_driver"
 const val CHILD_BECOME_DRIVER_PHONE = "phone_number_driver"
-const val CHILD_BECOME_DRIVER_PHOTO = "photo_driver"
-const val CHILD_BECOME_DRIVER_PHOTO_CAR = "photo_car"
-const val CHILD_BECOME_DRIVER_PHOTO_LICENCE = "photo_licence"
+
+const val CHILD_DRIVER_PHOTO = "photo_driver"
+const val CHILD_PHOTO_CAR = "photo_car"
+const val CHILD_PHOTO_LICENCE = "photo_licence"
 
 //Role user
 const val USER_ROLE = "user"

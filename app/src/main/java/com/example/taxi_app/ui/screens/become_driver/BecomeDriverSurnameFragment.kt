@@ -22,6 +22,7 @@ class BecomeDriverSurnameFragment : BaseFragment(R.layout.fragment_become_driver
 
     override fun onResume() {
         super.onResume()
+        initFields()
         binding.becomeDriverSurnameBtnSaveChanges.setOnClickListener { saveBecomeDriverSurname() }
     }
 
@@ -39,4 +40,8 @@ class BecomeDriverSurnameFragment : BaseFragment(R.layout.fragment_become_driver
         }
     }
 
+    //Initial fields
+    private fun initFields() {
+        binding.becomeDriverSurnameEdtText.setText(BECOMEDRIVER.surname_driver)
+    }
 }
