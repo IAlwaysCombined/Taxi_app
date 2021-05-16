@@ -3,6 +3,13 @@
     <!-- All app strings. -->
     <string name="toast_data_update">Данные обновлены</string>
     <string name="btn_text_further">Далее</string>
+    <!-- Enter phone. -->
+    <string name="enter_phone_text_view_description_text">Номер телефона</string>
+    <string name="enter_phone_text_view_description_text_two">На него мы отправим код подтверждения</string>
+    <string name="enter_phone_text_view_phone_number_hint">+380123456789</string>
+    <!-- Enter code. -->
+    <string name="enter_code_text_view_description_text">Код</string>
+    <string name="enter_code_text_view_description_text_two">На ваш номер телефона отправлен код</string>
     <!-- Change user data strings. -->
     <string name="change_name_enter_name_description_hint">Ведите имя</string>
     <string name="change_user_name_edt_name_hint">Как вас зовут?</string>
@@ -55,5 +62,12 @@
     <string name="become_driver_photo_text_view_photo_car_description">Фото авто</string>
     <string name="become_driver_photo_text_view_photo_driver_description">Ваше фото</string>
     <string name="become_driver_photo_text_view_photo_license_description">Фото вод. удостоверенея</string>
-    <string name="become_drivar_toast_orders_done">Заявка отправлена</string>
+    <string name="become_driver_toast_orders_done">Заявка отправлена</string>
+    <!--Help strings. -->
+    <string name="help_description_text_view">Служба поддержки</string>
+    <!--Enter phone and code string. -->
+    <string name="enter_code_fragment_btn_enter">Далее</string>
+    <!-- Pay Method string -->
+    <string name="pay_method_add_credit_card_btn_text">Добавить карту</string>
+    <string name="enter_phone_text_view_code_hint">123456</string>
 </resources>

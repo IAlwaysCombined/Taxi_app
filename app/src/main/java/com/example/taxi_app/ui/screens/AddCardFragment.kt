@@ -6,17 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.taxi_app.R
-import com.example.taxi_app.databinding.FragmentHelpBinding
+import com.example.taxi_app.databinding.FragmentAddCardBinding
 import com.example.taxi_app.ui.BaseFragment
-import com.example.taxi_app.utilites.APP_ACTIVITY
 
-class HelpFragment : BaseFragment(R.layout.fragment_help) {
 
-    private lateinit var binding: FragmentHelpBinding
+class AddCardFragment : BaseFragment(R.layout.fragment_add_card) {
+
+    private lateinit var binding: FragmentAddCardBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentHelpBinding.bind(view)
+        binding = FragmentAddCardBinding.bind(view)
     }
 
     override fun onResume() {

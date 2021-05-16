@@ -29,21 +29,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="start"
+            android:layout_marginVertical="10dp"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="30dp"
+                android:layout_width="35dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_cash"/>
 
             <TextView
                 style="@style/text_view_pay_method_style"
                 android:text="@string/pay_method_text_view_cash"/>
-
-            <RadioButton
-                android:id="@+id/pay_method_radio_btn_cash"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
 
         </LinearLayout>
 
@@ -55,21 +51,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="start"
+            android:layout_marginVertical="10dp"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="30dp"
+                android:layout_width="35dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_google_pay"/>
 
             <TextView
                 style="@style/text_view_pay_method_style"
                 android:text="@string/pay_method_text_view_g_pay"/>
-
-            <RadioButton
-                android:id="@+id/pay_method_radio_btn_g_pay"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
 
         </LinearLayout>
 
@@ -81,21 +73,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="start"
+            android:layout_marginVertical="10dp"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="30dp"
+                android:layout_width="35dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_credit_card"/>
 
             <TextView
                 style="@style/text_view_pay_method_style"
                 android:text="@string/pay_method_text_view_card"/>
-
-            <RadioButton
-                android:id="@+id/pay_method_radio_btn_card"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
 
         </LinearLayout>
 
@@ -105,13 +93,11 @@
     </LinearLayout>
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="Добавить карту"
-        android:textAllCaps="false"
+        android:id="@+id/pay_method_add_credit_card_btn"
+        style="@style/change_user_data_btn_style"
+        android:text="@string/pay_method_add_credit_card_btn_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -62,7 +62,7 @@ class AppDrawer {
 
     //Create drawer
     private fun createDrawer() {
-        drawer = DrawerBuilder()
+        DrawerBuilder()
             .withActivity(APP_ACTIVITY)
             .withToolbar(APP_ACTIVITY.toolbar)
             .withActionBarDrawerToggle(true)
@@ -79,11 +79,7 @@ class AppDrawer {
                     .withSelectable(false),
                 PrimaryDrawerItem().withIdentifier(102)
                     .withIconTintingEnabled(true)
-                    .withName("Служба поддержки")
-                    .withSelectable(false),
-                PrimaryDrawerItem().withIdentifier(103)
-                    .withIconTintingEnabled(true)
-                    .withName("Стать водителем")
+                    .withName(APP_ACTIVITY.getString(R.string.become_driver_description_text_view))
                     .withSelectable(false),
             ).withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener {
                 override fun onItemClick(
@@ -94,15 +90,14 @@ class AppDrawer {
                     changeFragmentReplace(position)
                     return false
                 }
-            }).build()
+            }).build().also { drawer = it }
     }
 
     private fun changeFragmentReplace(position: Int){
         when (position) {
             1 -> APP_ACTIVITY.replaceFragment(ProfileFragment())
             2 -> APP_ACTIVITY.replaceFragment(PayMethodFragment())
-            3 -> APP_ACTIVITY.replaceFragment(HelpFragment())
-            4 -> APP_ACTIVITY.replaceFragment(BecomeDriverFragment())
+            3 -> APP_ACTIVITY.replaceFragment(BecomeDriverFragment())
         }
     }
 

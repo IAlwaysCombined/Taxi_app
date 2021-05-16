@@ -19,8 +19,8 @@ class AuthActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    override fun onStart() {
-        super.onStart()
+    override fun onResume() {
+        super.onResume()
         replaceFragment(EnterPhoneNumberFragment())
     }
 }

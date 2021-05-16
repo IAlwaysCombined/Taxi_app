@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:gravity="bottom"
     app:umanoOverlay="true"
-    app:umanoPanelHeight="300dp"
+    app:umanoPanelHeight="400dp"
     app:umanoShadowHeight="0dp">
 
     <fragment
@@ -19,18 +19,18 @@
 
     <LinearLayout
         android:id="@+id/liner"
-        android:layout_height="350dp"
+        android:layout_height="400dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:background="@drawable/search_map">
+        android:background="@drawable/search_map_slider_background">
 
-        <View
+        <!--<View
             android:layout_width="40dp"
             android:layout_height="5dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="@drawable/line"
-            tools:ignore="RtlSymmetry" />
+            android:background="@drawable/search_map_line_background"
+            tools:ignore="RtlSymmetry" /> -->
 
         <androidx.cardview.widget.CardView
             style="@style/card_view_style"
@@ -60,16 +60,23 @@
                     android:layout_height="0dp"
                     android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"/>
 
+                <View
+                    style="@style/underline_style"
+                    android:layout_margin="15dp" />
+
+                <fragment
+                    android:layout_weight="9"
+                    android:id="@+id/autocomplete_3_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"/>
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <Button
+            style="@style/change_user_data_btn_style"
             android:id="@+id/map_btn_create_ride"
-            android:text="Заказать"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:padding="20dp"/>
-
+            android:text="Заказать"/>
     </LinearLayout>
 </com.sothree.slidinguppanel.SlidingUpPanelLayout>

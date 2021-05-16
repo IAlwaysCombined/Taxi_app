@@ -8,27 +8,16 @@
 
     <TextView
         android:id="@+id/enter_phone_text_view_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="Номер телефона"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="20sp"
+        style="@style/change_user_data_text_view_description_style"
+        android:text="@string/enter_phone_text_view_description_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/enter_phone_text_view_description_two"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_marginTop="20dp"
-        android:text="На него мы отправим\n код подтверждения"
-        android:textAlignment="center"
-        android:textColor="@color/gray_600"
-        android:textSize="15sp"
+        style="@style/enter_phone_code_description_text"
+        android:text="@string/enter_phone_text_view_description_text_two"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,44 +26,20 @@
     <EditText
         android:id="@+id/enter_phone_edt_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        style="@style/change_user_data_edt_text_style"
         android:maxLength="13"
+        android:hint="@string/enter_phone_text_view_phone_number_hint"
         android:inputType="phone"
-        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enter_phone_text_view_description_two" />
 
-    <LinearLayout
+    <Button
         android:id="@+id/enter_phone_btn_further"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#f8f8f8"
-        android:orientation="horizontal"
-        android:padding="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/change_user_data_btn_style"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="Продолжить" />
-
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="right|center"
-                android:src="@drawable/ic_next" />
-        </FrameLayout>
-    </LinearLayout>
+        android:text="@string/enter_code_fragment_btn_enter"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

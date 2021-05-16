@@ -37,7 +37,7 @@ class BecomeDriverPhotoFragment : BaseFragment(R.layout.fragment_become_driver_p
 
     private fun setDriverPhoto() {
         CropImage.activity()
-            .setRequestedSize(1000,600)
+            .setRequestedSize(400,400)
             .start(APP_ACTIVITY, this)
     }
 

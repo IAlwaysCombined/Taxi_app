@@ -9,11 +9,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
+import androidx.core.view.size
 import androidx.fragment.app.Fragment
 import androidx.slidingpanelayout.widget.SlidingPaneLayout
 import com.example.taxi_app.R
+import com.example.taxi_app.database.*
 import com.example.taxi_app.databinding.FragmentMapsBinding
 import com.example.taxi_app.utilites.APP_ACTIVITY
+import com.example.taxi_app.utilites.AppValueEventListener
+import com.example.taxi_app.utilites.showToast
 import com.google.android.gms.common.api.Status
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
@@ -24,6 +28,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.libraries.places.api.Places
 import com.google.android.libraries.places.api.model.Place
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment
@@ -41,11 +46,11 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     private val permissionCode = 101
 
-    lateinit var locationCallback: LocationCallback
-    val cityname = ""
-
+    private lateinit var locationCallback: LocationCallback
     private lateinit var  slidingPaneLayout: SlidingPaneLayout
     private lateinit var autocompleteSupportFragment: AutocompleteSupportFragment
+    private lateinit var autocompleteSupportFragment2: AutocompleteSupportFragment
+    private lateinit var autocompleteSupportFragment3: AutocompleteSupportFragment
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -61,18 +66,28 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
         return super.onCreateView(inflater, container, savedInstanceState)
         val root = layoutInflater.inflate(R.layout.fragment_maps, container, false )
         initView(root)
-        init()
     }
 
     override fun onStart() {
         super.onStart()
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(APP_ACTIVITY)
         fetchLocation()
+        binding.mapBtnCreateRide.setOnClickListener { createRide() }
+    }
+
+    private fun createRide() {
+        val dateMap = mutableMapOf<String, Any>()
+        dateMap[CHILD_START] = childFragmentManager.findFragmentById(R.id.autocomplete_fragment) as AutocompleteSupportFragment
+        dateMap[CHILD_END] = childFragmentManager.findFragmentById(R.id.autocomplete_2_fragment) as AutocompleteSupportFragment
+
+        REF_DATABASE_ROOT.child(NODE_ORDER_RIDES).child(UID)
+            .addValueEventListener(AppValueEventListener{ task ->
+                showToast("Поиск машины")
+            })
     }
 
     private fun initView(root: View?){
         slidingPaneLayout = root?.findViewById(R.id.mapFragment) as SlidingPaneLayout
-
     }
 
     private fun setRestrictPlaceInCountry(lastLocation: Location) {
@@ -91,7 +106,23 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
     private fun init(){
         Places.initialize(requireContext(),getString(R.string.google_maps_key))
         autocompleteSupportFragment = childFragmentManager.findFragmentById(R.id.autocomplete_fragment) as AutocompleteSupportFragment
+        autocompleteSupportFragment2 = childFragmentManager.findFragmentById(R.id.autocomplete_2_fragment) as AutocompleteSupportFragment
+        autocompleteSupportFragment3 = childFragmentManager.findFragmentById(R.id.autocomplete_2_fragment) as AutocompleteSupportFragment
         autocompleteSupportFragment.setPlaceFields(
+            listOf(
+                Place.Field.ID,
+                Place.Field.ADDRESS,
+                Place.Field.LAT_LNG,
+                Place.Field.NAME)
+        )
+        autocompleteSupportFragment2.setPlaceFields(
+            listOf(
+                Place.Field.ID,
+                Place.Field.ADDRESS,
+                Place.Field.LAT_LNG,
+                Place.Field.NAME)
+        )
+        autocompleteSupportFragment3.setPlaceFields(
             listOf(
                 Place.Field.ID,
                 Place.Field.ADDRESS,
@@ -100,14 +131,28 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
         )
         autocompleteSupportFragment.setOnPlaceSelectedListener(object : PlaceSelectionListener {
             override fun onPlaceSelected(p0: Place) {
-                Snackbar.make(requireView(),""+ p0.latLng,Snackbar.LENGTH_SHORT).show()
-
+                Snackbar.make(requireView(),""+ p0.address,Snackbar.LENGTH_SHORT).show()
             }
             override fun onError(p0: Status) {
                 Snackbar.make(requireView(), p0.statusMessage,Snackbar.LENGTH_SHORT).show()
             }
         })
-
+        autocompleteSupportFragment2.setOnPlaceSelectedListener(object : PlaceSelectionListener {
+            override fun onPlaceSelected(p0: Place) {
+                Snackbar.make(requireView(),""+ p0.address,Snackbar.LENGTH_SHORT).show()
+            }
+            override fun onError(p0: Status) {
+                Snackbar.make(requireView(), p0.statusMessage,Snackbar.LENGTH_SHORT).show()
+            }
+        })
+        autocompleteSupportFragment3.setOnPlaceSelectedListener(object : PlaceSelectionListener {
+            override fun onPlaceSelected(p0: Place) {
+                Snackbar.make(requireView(),""+ p0.address,Snackbar.LENGTH_SHORT).show()
+            }
+            override fun onError(p0: Status) {
+                Snackbar.make(requireView(), p0.statusMessage,Snackbar.LENGTH_SHORT).show()
+            }
+        })
         locationCallback = object : LocationCallback(){
             override fun onLocationResult(p0: LocationResult) {
                 super.onLocationResult(p0)
@@ -166,6 +211,4 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
             }
         }
     }
-
-
 }

@@ -38,7 +38,7 @@ class BecomeDriverLicensePhotoFragment : BaseFragment(R.layout.fragment_become_d
 
     private fun setDriverLicensePhoto() {
         CropImage.activity()
-            .setRequestedSize(1000,600)
+            .setRequestedSize(600,1000)
             .start(APP_ACTIVITY, this)
     }
 

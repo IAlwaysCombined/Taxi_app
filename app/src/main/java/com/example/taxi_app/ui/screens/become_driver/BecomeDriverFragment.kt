@@ -51,7 +51,7 @@ class BecomeDriverFragment: BaseFragment(R.layout.fragment_become_driver) {
         dateMap[CHILD_PHOTO_CAR] = BECOMEDRIVER.photo_car
         REF_DATABASE_ROOT.child(NODE_ORDER_DRIVERS).child(UID).updateChildren(dateMap)
         REF_DATABASE_ROOT.child(NODE_PRE_ORDER_DRIVERS).child(UID).removeValue()
-        showToast(getString(R.string.become_drivar_toast_orders_done))
+        showToast(getString(R.string.become_driver_toast_orders_done))
         restartActivity()
         hideKeyboard()
     }
