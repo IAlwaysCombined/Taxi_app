@@ -11,4 +11,5 @@ data class BecomeDriverModel(
     var photo_driver: String = "",
     var photo_car: String = "",
     var photo_licence: String = "",
+    var email_driver: String = "",
 )

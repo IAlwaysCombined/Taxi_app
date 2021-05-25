@@ -11,7 +11,6 @@ import com.example.taxi_app.utilites.backStack
 import com.example.taxi_app.utilites.hideKeyboard
 import com.example.taxi_app.utilites.showToast
 
-
 @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class ChangeEmailFragment : BaseFragment(R.layout.fragment_change_email) {
 

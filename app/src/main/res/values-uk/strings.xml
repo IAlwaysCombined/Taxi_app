@@ -4,24 +4,10 @@
     <string name="toast_data_update">Данные обновлены</string>
     <string name="btn_text_further">Далее</string>
     <string name="welcome_toast">Добро пожаловать</string>
-    <!-- Auth. -->
-    <string name="auth_email_edt_text">Email</string>
-    <string name="auth_enter_btn_text">Войти</string>
-    <string name="auth_text_view_restore_password_text">Забыли пароль?</string>
-    <string name="auth_password_edt_text">Пароль</string>
-    <string name="email_edt_text_not_filled_toast">Поле Email не заполнено</string>
-    <string name="message_restore_password_send_toast">Сообщение отправлено на Email</string>
-    <string name="something_went_wrong_toast">Что-то пошло не так</string>
-    <string name="password_edt_text_not_filled_toast">Поле пароль не заполнено</string>
-    <string name="name_edt_text_not_filled_toast">Поле имя не заполнено</string>
-    <string name="phone_edt_text_not_filled_toast">Поле имя не заполнено</string>
-    <string name="registration_text_view_description">Регистрация</string>
-    <string name="registration_btn_enter_text">Зарегистрироваться</string>
-
     <!-- Enter phone. -->
-    <string name="auth_text_view_description_text">Авторизация</string>
+    <string name="auth_text_view_description_text">Номер телефона</string>
     <string name="enter_phone_text_view_description_text_two">На него мы отправим код подтверждения</string>
-    <string name="enter_phone_text_view_phone_number_hint">+380123456789</string>
+    <string name="enter_phone_text_view_phone_number_hint">+1234567890</string>
     <string name="enter_phone_number_toast">Введите номер телефона</string>
     <!-- Enter code. -->
     <string name="enter_code_text_view_description_text">Код</string>
@@ -88,13 +74,25 @@
     <string name="pay_method_add_credit_card_btn_text">Добавить карту</string>
     <string name="registration_enter_phone_number_hint">Номер телефона</string>
     <string name="registration_text_view_description_name_text">Имя</string>
-    <string name="coast_ride_description_maps_fragment" >Стоимость: </string>
-    <string name="dist_ride_description_maps_fragment" >Расстояние: </string>
-    <string name="time_ride_description_maps_fragment" >Время поездки: </string>
-    <string name="pay_method_ride_description_maps_fragment" >Способ оплаты: </string>
-    <string name="grn" > грн</string>
-    <string name="meters" > м</string>
-    <string name="minutes" > мин</string>
+    <string name="auth_email_edt_text">Email</string>
+    <string name="auth_enter_btn_text">Войти</string>
+    <string name="auth_text_view_restore_password_text">Забыли пароль?</string>
+    <string name="auth_password_edt_text">Пароль</string>
+    <string name="email_edt_text_not_filled_toast">Поле Email не заполнено</string>
+    <string name="message_restore_password_send_toast">Сообщение отправлено на Email</string>
+    <string name="something_went_wrong_toast">Что-то пошло не так</string>
+    <string name="password_edt_text_not_filled_toast">Поле пароль не заполнено</string>
+    <string name="name_edt_text_not_filled_toast">Поле имя не заполнено</string>
+    <string name="phone_edt_text_not_filled_toast">Поле имя не заполнено</string>
+    <string name="registration_text_view_description">Регистрация</string>
+    <string name="registration_btn_enter_text">Зарегистрироваться</string>
+    <string name="coast_ride_description_maps_fragment" >Стоимость:</string>
+    <string name="dist_ride_description_maps_fragment" >Расстояние:</string>
+    <string name="time_ride_description_maps_fragment" >Время поездки:</string>
+    <string name="pay_method_ride_description_maps_fragment" >Способ оплаты:</string>
+    <string name="grn">грн</string>
+    <string name="meters">м</string>
+    <string name="minutes">мин</string>
     <string name="start_point_hint">Точка отправления</string>
     <string name="end_pont_hint">Точка назначения</string>
     <string name="stop_point">Остановка</string>

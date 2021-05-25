@@ -4,14 +4,12 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.taxi_app.activity.AuthActivity
-import com.example.taxi_app.database.AUTH
-import com.example.taxi_app.database.initBecomeDriver
-import com.example.taxi_app.database.initFirebase
-import com.example.taxi_app.database.initUser
+import com.example.taxi_app.database.*
 import com.example.taxi_app.databinding.ActivityMainBinding
 import com.example.taxi_app.ui.screens.MapsFragment
 import com.example.taxi_app.ui.objects.AppDrawer
 import com.example.taxi_app.utilites.*
+import retrofit2.Retrofit
 
 
 @Suppress("DEPRECATION")
@@ -34,10 +32,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-    }
-
     //init Fields
     private fun initFields(){
         toolbar = binding.mainToolbar
@@ -49,10 +43,12 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         if (AUTH.currentUser != null) {
+            hideKeyboard()
             appDrawer.create()
             replaceFragment(MapsFragment())
         }
         else{
+            hideKeyboard()
             replaceActivity(AuthActivity())
         }
     }

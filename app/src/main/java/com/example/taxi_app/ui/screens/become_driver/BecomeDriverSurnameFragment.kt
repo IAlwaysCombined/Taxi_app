@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import com.example.taxi_app.R
 import com.example.taxi_app.database.*
-import com.example.taxi_app.database.CHILD_BECOME_DRIVER_NAME
 import com.example.taxi_app.databinding.FragmentBecomeDriverSurnameBinding
 import com.example.taxi_app.ui.BaseFragment
 import com.example.taxi_app.utilites.backStack

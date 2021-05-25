@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.screens.HelpFragment">
+    tools:context=".ui.screens.change_user_data.HelpFragment">
 
     <TextView
         android:id="@+id/profile_description_text_view"

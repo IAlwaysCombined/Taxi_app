@@ -1,10 +1,7 @@
 package com.example.taxi_app.ui.screens.become_driver
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import com.example.taxi_app.R
 import com.example.taxi_app.database.*
 import com.example.taxi_app.databinding.FragmentBecomeDriverCarNumberBinding

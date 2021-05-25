@@ -6,12 +6,10 @@ import android.view.View
 import android.widget.ImageView
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.taxi_app.R
-import com.example.taxi_app.database.PHONE
 import com.example.taxi_app.database.USER
 import com.example.taxi_app.ui.screens.become_driver.BecomeDriverFragment
-import com.example.taxi_app.ui.screens.HelpFragment
-import com.example.taxi_app.ui.screens.PayMethodFragment
 import com.example.taxi_app.ui.screens.change_user_data.ProfileFragment
+import com.example.taxi_app.ui.screens.pay.PayMethodFragment
 import com.example.taxi_app.utilites.*
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
@@ -105,7 +103,7 @@ class AppDrawer {
     private fun createHeader() {
         currentProfile = ProfileDrawerItem()
             .withName(USER.name_user)
-            .withEmail(PHONE)
+            .withEmail(USER.phone_user)
             .withIcon(USER.image_user)
             .withIdentifier(200)
         header = AccountHeaderBuilder()
@@ -124,9 +122,7 @@ class AppDrawer {
             .withName(USER.name_user)
             .withEmail(USER.phone_user)
             .withIcon(USER.image_user)
-
         header.updateProfile(currentProfile)
-
     }
 
     //Init loader for download image in header
@@ -137,5 +133,4 @@ class AppDrawer {
             }
         })
     }
-
 }

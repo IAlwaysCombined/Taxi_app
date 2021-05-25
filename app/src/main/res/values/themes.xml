@@ -1,8 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Taxi_app" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.Taxi_app" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -129,15 +129,33 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="enter_phone_code_description_text">
+    <style name="map_edit_text_address_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:lines">1</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:inputType">text</item>
+        <item name="android:textCursorDrawable">@drawable/text_cursor_background</item>
+        <item name="background">@drawable/background_edt_address</item>
+        <item name="android:backgroundTint">@android:color/transparent</item>
+    </style>
+
+    <style name="small_auth_text_view_style">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">20dp</item>
-        <item name="android:layout_marginTop">20dp</item>
-        <item name="android:gravity">center</item>
-        <item name="android:textAlignment">center</item>
-        <item name="android:textColor">@color/gray_600</item>
+        <item name="android:layout_margin">20sp</item>
         <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/gray_600</item>
+    </style>
+
+    <style name="map_text_view_data">
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_height">match_parent</item>
     </style>
 
 </resources>

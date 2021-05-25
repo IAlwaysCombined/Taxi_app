@@ -2,6 +2,8 @@ package com.example.taxi_app.database
 
 import android.net.Uri
 import com.example.taxi_app.models.BecomeDriverModel
+import com.example.taxi_app.models.DriverModel
+import com.example.taxi_app.models.RidesModel
 import com.example.taxi_app.models.UserModel
 import com.example.taxi_app.utilites.AppValueEventListener
 import com.example.taxi_app.utilites.showToast
@@ -15,10 +17,12 @@ fun initFirebase() {
     AUTH = FirebaseAuth.getInstance()
     USER = UserModel()
     BECOMEDRIVER = BecomeDriverModel()
+    RIDES = RidesModel()
+    DRIVER = DriverModel()
     REF_DATABASE_ROOT = FirebaseDatabase.getInstance().reference
     REF_STORAGE_ROOT = FirebaseStorage.getInstance().reference
     UID = AUTH.currentUser?.uid.toString()
-    PHONE = AUTH.currentUser?.phoneNumber.toString()
+    EMAIL = AUTH.currentUser?.email.toString()
 }
 
 //Initial Users
@@ -27,6 +31,14 @@ inline fun initUser(crossinline function: () -> Unit) {
         .addListenerForSingleValueEvent(AppValueEventListener {
             USER = it.getValue(UserModel::class.java) ?: UserModel()
             function()
+        })
+}
+
+////Initial Driver
+fun initDriver(){
+    REF_DATABASE_ROOT.child(NODE_DRIVER)
+        .addListenerForSingleValueEvent(AppValueEventListener{
+            DRIVER = it.getValue(DriverModel::class.java) ?: DriverModel()
         })
 }
 
@@ -41,7 +53,7 @@ fun initBecomeDriver() {
 //Send URL in realtime database
 inline fun putUrlToDatabase(url: String, crossinline function: () -> Unit) {
     REF_DATABASE_ROOT.child(NODE_USERS).child(UID)
-        .child(CHILD_PHOTO_URL).setValue(url)
+        .child(CHILD_PHOTO_USER).setValue(url)
         .addOnSuccessListener { function() }
         .addOnFailureListener { showToast(it.message.toString()) }
 }

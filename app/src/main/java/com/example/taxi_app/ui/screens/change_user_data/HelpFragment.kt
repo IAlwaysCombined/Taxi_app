@@ -1,4 +1,4 @@
-package com.example.taxi_app.ui.screens
+package com.example.taxi_app.ui.screens.change_user_data
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

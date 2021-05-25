@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.screens.PayMethodFragment">
+    tools:context=".ui.screens.pay.PayMethodFragment">
 
     <TextView
         android:id="@+id/pay_method_description_text_view"
@@ -38,6 +38,7 @@
                 android:src="@drawable/ic_cash"/>
 
             <TextView
+                android:id="@+id/cash"
                 style="@style/text_view_pay_method_style"
                 android:text="@string/pay_method_text_view_cash"/>
 
@@ -60,6 +61,7 @@
                 android:src="@drawable/ic_google_pay"/>
 
             <TextView
+                android:id="@+id/g_pay"
                 style="@style/text_view_pay_method_style"
                 android:text="@string/pay_method_text_view_g_pay"/>
 
@@ -82,6 +84,7 @@
                 android:src="@drawable/ic_credit_card"/>
 
             <TextView
+                android:id="@+id/card"
                 style="@style/text_view_pay_method_style"
                 android:text="@string/pay_method_text_view_card"/>
 

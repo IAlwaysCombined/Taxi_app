@@ -17,20 +17,22 @@
     <LinearLayout
         android:id="@+id/become_driver_photo_car_text_view_description"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginVertical="20dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/become_driver_photo_car_btn_save_changes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/become_driver_photo_description">
 
         <TextView
             style="@style/profile_text_view_description_data"
-            android:text="@string/become_driver_photo_text_view_photo_car_description"/>
+            android:text="@string/become_driver_photo_text_view_photo_car_description" />
 
         <ImageView
             android:id="@+id/photo_car_image"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="match_parent"
             android:layout_marginHorizontal="20dp"
             android:layout_marginVertical="5dp"
             android:background="@drawable/become_driver_photo_image_background" />

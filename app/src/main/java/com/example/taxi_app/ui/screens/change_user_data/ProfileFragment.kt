@@ -9,8 +9,6 @@ import com.example.taxi_app.activity.AuthActivity
 import com.example.taxi_app.database.*
 import com.example.taxi_app.databinding.FragmentProfileBinding
 import com.example.taxi_app.ui.BaseFragment
-import com.example.taxi_app.ui.screens.change_user_data.ChangeEmailFragment
-import com.example.taxi_app.ui.screens.change_user_data.ChangeNameFragment
 import com.example.taxi_app.utilites.*
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
@@ -37,13 +35,12 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
 
     //Init fields
     private fun initFields(){
-        binding.profilePhoneNumberUserTextView.text = PHONE
+        binding.profilePhoneNumberUserTextView.text = USER.phone_user
         binding.profileNameUserTextView.text = USER.name_user
         binding.profileEmailUserTextView.text = USER.email_user
         binding.profileAvatarImageView.downloadAndSetImage(USER.image_user)
         binding.profileNameUserTextView.setOnClickListener { replaceFragment(ChangeNameFragment()) }
         binding.profileAvatarImageView.setOnClickListener { setImageAvatar() }
-        binding.profileEmailUserTextView.setOnClickListener { replaceFragment(ChangeEmailFragment()) }
         binding.profileExitBtn.setOnClickListener { exitApp() }
     }
 
@@ -56,7 +53,6 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        /* Активность которая запускается для получения картинки для фото пользователя */
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE
             && resultCode == Activity.RESULT_OK && data != null
